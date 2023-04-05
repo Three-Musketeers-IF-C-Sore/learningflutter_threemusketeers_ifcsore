@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,6 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          children: const [
+            Text(
+              "Hello",
+              style: heading1Bold,
+            )
+          ],
         ),
       ),
     );
