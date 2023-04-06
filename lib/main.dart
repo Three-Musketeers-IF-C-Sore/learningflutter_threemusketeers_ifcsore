@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/flutter_introduction.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 
 void main() {
@@ -40,8 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          children: const [
-            Text(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Route route = MaterialPageRoute(builder: (context) => const FlutterIntro());
+                Navigator.push(context, route);
+              }, 
+              child: const Text('Flutter Introduction')
+            ),
+            const Text(
               "Hello",
               style: $heading1Bold,
               selectionColor: $primary500,
