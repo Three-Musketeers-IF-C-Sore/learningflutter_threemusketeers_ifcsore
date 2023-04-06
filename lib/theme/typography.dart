@@ -44,73 +44,73 @@ const double _heightCaption2 = 1.3;
 // Styles
 
 // Bold
-const TextStyle display1Bold = TextStyle(
+const TextStyle $display1Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeDisplay1,
   height: _heightDisplay1,
 );
-const TextStyle display2Bold = TextStyle(
+const TextStyle $display2Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeDisplay2,
   height: _heightDisplay2,
 );
-const TextStyle heading1Bold = TextStyle(
+const TextStyle $heading1Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading1,
   height: _heightHeading1,
 );
-const TextStyle heading2Bold = TextStyle(
+const TextStyle $heading2Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading2,
   height: _heightHeading2,
 );
-const TextStyle heading3Bold = TextStyle(
+const TextStyle $heading3Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading3,
   height: _heightHeading3,
 );
-const TextStyle heading4Bold = TextStyle(
+const TextStyle $heading4Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading4,
   height: _heightHeading4,
 );
-const TextStyle heading5Bold = TextStyle(
+const TextStyle $heading5Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading5,
   height: _heightHeading5,
 );
-const TextStyle heading6Bold = TextStyle(
+const TextStyle $heading6Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading6,
   height: _heightHeading6,
 );
-const TextStyle body1Bold = TextStyle(
+const TextStyle $body1Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeBody1,
   height: _heightBody1,
 );
-const TextStyle body2Bold = TextStyle(
+const TextStyle $body2Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeBody2,
   height: _heightBody2,
 );
-const TextStyle caption1Bold = TextStyle(
+const TextStyle $caption1Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeCaption1,
   height: _heightCaption1,
 );
-const TextStyle caption2Bold = TextStyle(
+const TextStyle $caption2Bold = TextStyle(
   fontWeight: _fontWeightBold,
   fontFamily: _fontFamily,
   fontSize: _fontSizeCaption2,
@@ -119,73 +119,73 @@ const TextStyle caption2Bold = TextStyle(
 
 
 //Regular
-const TextStyle display1Regular = TextStyle(
+const TextStyle $display1Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeDisplay1,
   height: _heightDisplay1,
 );
-const TextStyle display2Regular = TextStyle(
+const TextStyle $display2Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeDisplay2,
   height: _heightDisplay2,
 );
-const TextStyle heading1Regular = TextStyle(
+const TextStyle $heading1Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading1,
   height: _heightHeading1,
 );
-const TextStyle heading2Regular = TextStyle(
+const TextStyle $heading2Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading2,
   height: _heightHeading2,
 );
-const TextStyle heading3Regular = TextStyle(
+const TextStyle $heading3Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading3,
   height: _heightHeading3,
 );
-const TextStyle heading4Regular = TextStyle(
+const TextStyle $heading4Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading4,
   height: _heightHeading4,
 );
-const TextStyle heading5Regular = TextStyle(
+const TextStyle $heading5Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading5,
   height: _heightHeading5,
 );
-const TextStyle heading6Regular = TextStyle(
+const TextStyle $heading6Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading6,
   height: _heightHeading6,
 );
-const TextStyle body1Regular = TextStyle(
+const TextStyle $body1Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeBody1,
   height: _heightBody1,
 );
-const TextStyle body2Regular = TextStyle(
+const TextStyle $body2Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeBody2,
   height: _heightBody2,
 );
-const TextStyle caption1Regular = TextStyle(
+const TextStyle $caption1Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeCaption1,
   height: _heightCaption1,
 );
-const TextStyle caption2Regular = TextStyle(
+const TextStyle $caption2Regular = TextStyle(
   fontWeight: _fontWeightRegular,
   fontFamily: _fontFamily,
   fontSize: _fontSizeCaption2,
@@ -194,73 +194,73 @@ const TextStyle caption2Regular = TextStyle(
 
 
 //Light
-const TextStyle display1Light = TextStyle(
+const TextStyle $display1Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeDisplay1,
   height: _heightDisplay1,
 );
-const TextStyle display2Light = TextStyle(
+const TextStyle $display2Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeDisplay2,
   height: _heightDisplay2,
 );
-const TextStyle heading1Light = TextStyle(
+const TextStyle $heading1Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading1,
   height: _heightHeading1,
 );
-const TextStyle heading2Light = TextStyle(
+const TextStyle $heading2Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading2,
   height: _heightHeading2,
 );
-const TextStyle heading3Light = TextStyle(
+const TextStyle $heading3Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading3,
   height: _heightHeading3,
 );
-const TextStyle heading4Light = TextStyle(
+const TextStyle $heading4Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading4,
   height: _heightHeading4,
 );
-const TextStyle heading5Light = TextStyle(
+const TextStyle $heading5Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading5,
   height: _heightHeading5,
 );
-const TextStyle heading6Light = TextStyle(
+const TextStyle $heading6Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeHeading6,
   height: _heightHeading6,
 );
-const TextStyle body1Light = TextStyle(
+const TextStyle $body1Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeBody1,
   height: _heightBody1,
 );
-const TextStyle body2Light = TextStyle(
+const TextStyle $body2Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeBody2,
   height: _heightBody2,
 );
-const TextStyle caption1Light = TextStyle(
+const TextStyle $caption1Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeCaption1,
   height: _heightCaption1,
 );
-const TextStyle caption2Light = TextStyle(
+const TextStyle $caption2Light = TextStyle(
   fontWeight: _fontWeightLight,
   fontFamily: _fontFamily,
   fontSize: _fontSizeCaption2,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 
 void main() {
@@ -42,7 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Text(
               "Hello",
-              style: heading1Bold,
+              style: $heading1Bold,
+              selectionColor: $primary500,
             )
           ],
         ),
