@@ -32,7 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,19 +40,79 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                Route route = MaterialPageRoute(builder: (context) => const FlutterIntro());
-                Navigator.push(context, route);
-              }, 
-              child: const Text('Flutter Introduction')
-            ),
             const Text(
-              "Hello",
+              "Welcome",
+              textAlign: TextAlign.left,
               style: $heading1Bold,
               selectionColor: $primary500,
-            )
+            ),
+            const Text(
+              "List of Content",
+              textAlign: TextAlign.left,
+              style: $heading6Bold,
+              selectionColor: $primary500,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Route route = MaterialPageRoute(
+                      builder: (context) => const FlutterIntro());
+                  Navigator.push(context, route);
+                },
+                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                child: const Text('Week 1 : Flutter Introduction')),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                child: const Text('Week 2 : Flutter Introduction')),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                child: const Text('Week 3 : Flutter Introduction')),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                child: const Text('Week 4 : Flutter Introduction')),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                child: const Text('Week 5 : Flutter Introduction')),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                child: const Text('Week 6 : Flutter Introduction')),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                child: const Text('Week 7 : Flutter Introduction')),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                child: const Text('Bonus : Flutter Introduction')),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(350, 35),
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.blue),
+                child: const Text('About Us')),
           ],
         ),
       ),
