@@ -40,7 +40,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         centerTitle: true,
-        title: const Text('Flutter', style: heading2Light,),
+        title: const Text('Flutter', style: $heading2Light,),
         backgroundColor: Colors.purple,
         actions: [
           PopupMenuButton(
