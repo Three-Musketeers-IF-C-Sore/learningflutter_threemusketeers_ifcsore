@@ -106,6 +106,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
           padding:
               const EdgeInsets.only(top: 40, bottom: 85, left: 15, right: 15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset('asset/images/intro.jpeg'),
               const Padding(padding: EdgeInsets.all(8)),
@@ -161,23 +162,17 @@ class _FlutterIntroState extends State<FlutterIntro> {
                 ],
               ),
               const Padding(padding: EdgeInsets.all(8)),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'What kind of things can I build with Flutter?',
-                  style: $heading5Bold,
-                ),
+              const Text(
+                'What kind of things can I build with Flutter?',
+                style: $heading5Bold,
               ),
               const Divider(),
               const Text(
                   'Flutter is optimized to create 2D mobile apps that run on both Android and iOS. However, recent news shows that Flutter is expanding to the web, desktop and embedded environments. In your apps, you can implement geolocation, camera, network, 3rd-party SDKs and more.'),
               const Padding(padding: EdgeInsets.all(8)),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'What IDE can I use with Flutter?',
-                  style: $heading5Bold,
-                ),
+              const Text(
+                'What IDE can I use with Flutter?',
+                style: $heading5Bold,
               ),
               const Divider(),
               Image.asset('asset/images/ide.jpeg'),
@@ -185,39 +180,28 @@ class _FlutterIntroState extends State<FlutterIntro> {
               const Text(
                   "Flutter supports plugins for IntelliJ, VS Code and Android Studio. It’s really down to preference, but I love using VS Code, just because it’s lightweight and gives me the ability to edit, build and debug with ease."),
               const Padding(padding: EdgeInsets.all(8)),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'What language is used to write Flutter Code?',
-                  style: $heading5Bold,
-                ),
+              const Text(
+                'What language is used to write Flutter Code?',
+                style: $heading5Bold,
               ),
               const Divider(),
               const Text(
                   'Dart is the programming language that is used when coding Flutter applications. Dart was first shown back in October 2011, over 7 years ago. Dart follows object-oriented programming concepts like loops, classes, functions, methods, operators and some exceptions like throw and catch.'),
               const Padding(padding: EdgeInsets.all(8)),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Installing Flutter',
-                  style: $heading5Bold,
-                ),
+              const Text(
+                'Installing Flutter',
+                style: $heading5Bold,
               ),
               const Divider(),
               const Text(
                   'You will need to start by installing Flutter on your device. Flutter has full support for macOS, Linux and Windows. I would highly recommend using Visual Studio Code as your IDE, as well as the Dart Code extension, however Android Studio and IntelliJ are great alternatives.'),
               const Padding(padding: EdgeInsets.all(8)),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Creating a new Flutter Project',
-                  style: $heading5Bold,
-                ),
+              const Text(
+                'Creating a new Flutter Project',
+                style: $heading5Bold,
               ),
               const Divider(),
-              const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('Using terminal:')),
+              const Text('Using terminal:'),
               const Padding(padding: EdgeInsets.all(3)),
               Container(
                 width: double.infinity,
