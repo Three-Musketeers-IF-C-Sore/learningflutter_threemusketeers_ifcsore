@@ -37,85 +37,127 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: Colors.purpleAccent.shade400,
       ),
       body: Center(
+          child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Text(
-              "Welcome",
-              textAlign: TextAlign.left,
-              style: $heading1Bold,
-              selectionColor: $primary500,
+            const SizedBox(
+              width: 400,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Welcome",
+                  textAlign: TextAlign.left,
+                  style: $heading1Bold,
+                  selectionColor: $primary500,
+                ),
+              ),
             ),
-            const Text(
-              "List of Content",
-              textAlign: TextAlign.left,
-              style: $heading6Bold,
-              selectionColor: $primary500,
+            const Padding(padding: EdgeInsets.all(30)),
+            const SizedBox(
+              width: 400,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "List of Content",
+                  textAlign: TextAlign.left,
+                  style: $heading6Bold,
+                  selectionColor: $primary500,
+                ),
+              ),
             ),
+            const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
                   Route route = MaterialPageRoute(
                       builder: (context) => const FlutterIntro());
                   Navigator.push(context, route);
                 },
-                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 35),
+                    backgroundColor: Colors.purpleAccent.shade400),
                 child: const Text('Week 1 : Flutter Introduction')),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
-                child: const Text('Week 2 : Flutter Introduction')),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
-                child: const Text('Week 3 : Flutter Introduction')),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
-                child: const Text('Week 4 : Flutter Introduction')),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
-                child: const Text('Week 5 : Flutter Introduction')),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
-                child: const Text('Week 6 : Flutter Introduction')),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
-                child: const Text('Week 7 : Flutter Introduction')),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(fixedSize: const Size(350, 35)),
-                child: const Text('Bonus : Flutter Introduction')),
+            const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
                   //
                 },
                 style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(350, 35),
+                    fixedSize: const Size(400, 35),
+                    backgroundColor: Colors.purpleAccent.shade400),
+                child: const Text('Week 2 : Flutter Introduction')),
+            const Padding(padding: EdgeInsets.all(8)),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 35),
+                    backgroundColor: Colors.purpleAccent.shade400),
+                child: const Text('Week 3 : Flutter Introduction')),
+            const Padding(padding: EdgeInsets.all(8)),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 35),
+                    backgroundColor: Colors.purpleAccent.shade400),
+                child: const Text('Week 4 : Flutter Introduction')),
+            const Padding(padding: EdgeInsets.all(8)),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 35),
+                    backgroundColor: Colors.purpleAccent.shade400),
+                child: const Text('Week 5 : Flutter Introduction')),
+            const Padding(padding: EdgeInsets.all(8)),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 35),
+                    backgroundColor: Colors.purpleAccent.shade400),
+                child: const Text('Week 6 : Flutter Introduction')),
+            const Padding(padding: EdgeInsets.all(8)),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 35),
+                    backgroundColor: Colors.purpleAccent.shade400),
+                child: const Text('Week 7 : Flutter Introduction')),
+            const Padding(padding: EdgeInsets.all(8)),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 35),
+                    backgroundColor: Colors.purpleAccent.shade400),
+                child: const Text('Bonus : Flutter Introduction')),
+            const Padding(padding: EdgeInsets.all(30)),
+            ElevatedButton(
+                onPressed: () {
+                  //
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(400, 35),
                     backgroundColor: Colors.white,
-                    foregroundColor: Colors.blue),
+                    foregroundColor: Colors.purpleAccent.shade400,
+                    side:
+                        const BorderSide(width: 1, color: Colors.purpleAccent)),
                 child: const Text('About Us')),
           ],
         ),
-      ),
+      )),
     );
   }
 }
