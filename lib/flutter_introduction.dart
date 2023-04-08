@@ -119,24 +119,25 @@ class _FlutterIntroState extends State<FlutterIntro> {
               ),
               const Divider(),
               const Text(
-                  'Flutter is a new and evolving cross-platform mobile development framework made by Google. It allows you to create beautiful, cross-platform mobile applications with native performance, all from one codebase.'),
+                  'Flutter is a new and evolving cross-platform mobile development framework made by Google. It allows you to create beautiful, cross-platform mobile applications with native performance, all from one codebase.', style: $body1Regular,),
               const Padding(padding: EdgeInsets.all(8)),
               RichText(
                 text: const TextSpan(
                     text: 'Its support for',
-                    style: TextStyle(color: Colors.black),
+                    style: TextStyle(fontWeight: FontWeight.w500, fontFamily: "Plus Jakarta Sans", fontSize: 16.0, height: 1.4, color: Colors.black),
                     children: <TextSpan>[
                       TextSpan(
                           text: ' hot reloading ',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: $body1Bold),
                       TextSpan(
                           text:
-                              'allows a developer to quickly experiment and add features with split-second reloading times. This can speed up the development progress of applications substantially, setting Flutter apart from similar frameworks.'),
+                              'allows a developer to quickly experiment and add features with split-second reloading times. This can speed up the development progress of applications substantially, setting Flutter apart from similar frameworks.', 
+                          style: $body1Regular,),
                     ]),
               ),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
-                  'Flutter takes advantage of many different techniques in order to achieve high performance and productivity. These include:'),
+                  'Flutter takes advantage of many different techniques in order to achieve high performance and productivity. These include:', style: $body1Regular,),
               const Padding(padding: EdgeInsets.all(3)),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,7 +146,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
                   Text("\u2022"),
                   Padding(padding: EdgeInsets.all(3)),
                   Expanded(
-                    child: Text("Compiling to native code"),
+                    child: Text("Compiling to native code", style: $body1Regular,),
                   )
                 ],
               ),
@@ -157,7 +158,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
                   Padding(padding: EdgeInsets.all(3)),
                   Expanded(
                     child: Text(
-                        "Using widgets and only rendering them when necessary"),
+                      "Using widgets and only rendering them when necessary", style: $body1Regular,),
                   ),
                 ],
               ),
@@ -168,7 +169,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
               ),
               const Divider(),
               const Text(
-                  'Flutter is optimized to create 2D mobile apps that run on both Android and iOS. However, recent news shows that Flutter is expanding to the web, desktop and embedded environments. In your apps, you can implement geolocation, camera, network, 3rd-party SDKs and more.'),
+                  'Flutter is optimized to create 2D mobile apps that run on both Android and iOS. However, recent news shows that Flutter is expanding to the web, desktop and embedded environments. In your apps, you can implement geolocation, camera, network, 3rd-party SDKs and more.', style: $body1Regular,),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
                 'What IDE can I use with Flutter?',
@@ -178,7 +179,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
               Image.asset('asset/images/ide.jpeg'),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
-                  "Flutter supports plugins for IntelliJ, VS Code and Android Studio. It’s really down to preference, but I love using VS Code, just because it’s lightweight and gives me the ability to edit, build and debug with ease."),
+                  "Flutter supports plugins for IntelliJ, VS Code and Android Studio. It’s really down to preference, but I love using VS Code, just because it’s lightweight and gives me the ability to edit, build and debug with ease.", style: $body1Regular,),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
                 'What language is used to write Flutter Code?',
@@ -186,7 +187,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
               ),
               const Divider(),
               const Text(
-                  'Dart is the programming language that is used when coding Flutter applications. Dart was first shown back in October 2011, over 7 years ago. Dart follows object-oriented programming concepts like loops, classes, functions, methods, operators and some exceptions like throw and catch.'),
+                  'Dart is the programming language that is used when coding Flutter applications. Dart was first shown back in October 2011, over 7 years ago. Dart follows object-oriented programming concepts like loops, classes, functions, methods, operators and some exceptions like throw and catch.', style: $body1Regular,),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
                 'Installing Flutter',
@@ -194,7 +195,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
               ),
               const Divider(),
               const Text(
-                  'You will need to start by installing Flutter on your device. Flutter has full support for macOS, Linux and Windows. I would highly recommend using Visual Studio Code as your IDE, as well as the Dart Code extension, however Android Studio and IntelliJ are great alternatives.'),
+                  'You will need to start by installing Flutter on your device. Flutter has full support for macOS, Linux and Windows. I would highly recommend using Visual Studio Code as your IDE, as well as the Dart Code extension, however Android Studio and IntelliJ are great alternatives.', style: $body1Regular,),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
                 'Creating a new Flutter Project',
