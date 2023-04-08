@@ -26,18 +26,18 @@ const double _fontSizeCaption1 = 12.0;
 const double _fontSizeCaption2 = 10.0;
 
 // Line Heights
-const double _heightDisplay1 = 1.5;
-const double _heightDisplay2 = 1.5;
-const double _heightHeading1 = 1.4;
-const double _heightHeading2 = 1.4;
-const double _heightHeading3 = 1.4;
-const double _heightHeading4 = 1.4;
-const double _heightHeading5 = 1.4;
-const double _heightHeading6 = 1.4;
-const double _heightBody1 = 1.3;
-const double _heightBody2 = 1.3;
-const double _heightCaption1 = 1.3;
-const double _heightCaption2 = 1.3;
+const double _heightDisplay1 = 1.6;
+const double _heightDisplay2 = 1.6;
+const double _heightHeading1 = 1.5;
+const double _heightHeading2 = 1.5;
+const double _heightHeading3 = 1.5;
+const double _heightHeading4 = 1.5;
+const double _heightHeading5 = 1.5;
+const double _heightHeading6 = 1.5;
+const double _heightBody1 = 1.4;
+const double _heightBody2 = 1.4;
+const double _heightCaption1 = 1.4;
+const double _heightCaption2 = 1.4;
 
 
 
