@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: Colors.purpleAccent.shade400,
+        backgroundColor: Colors.purple.shade500,
       ),
       body: Center(
           child: SingleChildScrollView(
@@ -78,7 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
+                    backgroundColor: Colors.purple.shade500,
+                    alignment: Alignment.centerLeft),
                 child: const Text('Week 1 : Flutter Introduction')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
@@ -87,7 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
+                    backgroundColor: Colors.purple.shade500,
+                    alignment: Alignment.centerLeft),
                 child: const Text('Week 2 : Flutter Introduction')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
@@ -96,7 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
+                    backgroundColor: Colors.purple.shade500,
+                    alignment: Alignment.centerLeft),
                 child: const Text('Week 3 : Flutter Introduction')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
@@ -105,7 +108,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
+                    backgroundColor: Colors.purple.shade500,
+                    alignment: Alignment.centerLeft),
                 child: const Text('Week 4 : Flutter Introduction')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
@@ -114,7 +118,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
+                    backgroundColor: Colors.purple.shade500,
+                    alignment: Alignment.centerLeft),
                 child: const Text('Week 5 : Flutter Introduction')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
@@ -123,7 +128,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
+                    backgroundColor: Colors.purple.shade500,
+                    alignment: Alignment.centerLeft),
                 child: const Text('Week 6 : Flutter Introduction')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
@@ -132,7 +138,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
+                    backgroundColor: Colors.purple.shade500,
+                    alignment: Alignment.centerLeft),
                 child: const Text('Week 7 : Flutter Introduction')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
@@ -141,7 +148,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
+                    backgroundColor: Colors.purple.shade500,
+                    alignment: Alignment.centerLeft),
                 child: const Text('Bonus : Flutter Introduction')),
             const Padding(padding: EdgeInsets.all(30)),
             ElevatedButton(
@@ -151,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.white,
-                    foregroundColor: Colors.purpleAccent.shade400,
+                    foregroundColor: Colors.purple.shade500,
                     side:
                         const BorderSide(width: 1, color: Colors.purpleAccent)),
                 child: const Text('About Us')),
