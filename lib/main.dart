@@ -36,7 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: $heading2Light,
+        ),
         backgroundColor: Colors.purple.shade500,
       ),
       body: Center(
@@ -56,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            const Padding(padding: EdgeInsets.all(30)),
+            const Padding(padding: EdgeInsets.all(25)),
             const SizedBox(
               width: 400,
               child: Align(
@@ -80,7 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purple.shade500,
                     alignment: Alignment.centerLeft),
-                child: const Text('Week 1 : Flutter Introduction')),
+                child: const Text('Week 1 : Flutter Introduction',
+                    style: $caption1Regular)),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
@@ -90,7 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purple.shade500,
                     alignment: Alignment.centerLeft),
-                child: const Text('Week 2 : Flutter Introduction')),
+                child: const Text('Week 2 : Flutter Introduction',
+                    style: $caption1Regular)),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
@@ -100,7 +105,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purple.shade500,
                     alignment: Alignment.centerLeft),
-                child: const Text('Week 3 : Flutter Introduction')),
+                child: const Text('Week 3 : Flutter Introduction',
+                    style: $caption1Regular)),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
@@ -110,7 +116,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purple.shade500,
                     alignment: Alignment.centerLeft),
-                child: const Text('Week 4 : Flutter Introduction')),
+                child: const Text('Week 4 : Flutter Introduction',
+                    style: $caption1Regular)),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
@@ -120,7 +127,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purple.shade500,
                     alignment: Alignment.centerLeft),
-                child: const Text('Week 5 : Flutter Introduction')),
+                child: const Text('Week 5 : Flutter Introduction',
+                    style: $caption1Regular)),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
@@ -130,7 +138,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purple.shade500,
                     alignment: Alignment.centerLeft),
-                child: const Text('Week 6 : Flutter Introduction')),
+                child: const Text('Week 6 : Flutter Introduction',
+                    style: $caption1Regular)),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
@@ -140,7 +149,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purple.shade500,
                     alignment: Alignment.centerLeft),
-                child: const Text('Week 7 : Flutter Introduction')),
+                child: const Text('Week 7 : Flutter Introduction',
+                    style: $caption1Regular)),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
@@ -150,8 +160,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purple.shade500,
                     alignment: Alignment.centerLeft),
-                child: const Text('Bonus : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(30)),
+                child: const Text('Bonus : Flutter Introduction',
+                    style: $caption1Regular)),
+            const Padding(padding: EdgeInsets.all(25)),
             ElevatedButton(
                 onPressed: () {
                   //
@@ -162,7 +173,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     foregroundColor: Colors.purple.shade500,
                     side:
                         const BorderSide(width: 1, color: Colors.purpleAccent)),
-                child: const Text('About Us')),
+                child: const Text(
+                  'About Us',
+                  style: $caption1Regular,
+                )),
           ],
         ),
       )),
