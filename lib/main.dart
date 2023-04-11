@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import './providers/menu_provider.dart';
+import './providers/cart_provider.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/flutter_introduction.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +16,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => MenuProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(title: 'Learning Flutter'),
       ),
-      home: const MyHomePage(title: 'Learning Flutter'),
     );
   }
 }
@@ -92,16 +106,18 @@ class _MyHomePageState extends State<MyHomePage> {
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
-                  //
+                  Route route = MaterialPageRoute(
+                    builder: (context) => const OrderApp());
+                  Navigator.push(context, route);
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 3 : Flutter Introduction')),
+                child: const Text('Week 4 : Order App')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
-                  //
+                  // 
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),

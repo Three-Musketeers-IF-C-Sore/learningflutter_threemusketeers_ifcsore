@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "name": "Pizza Meat Lovers",
+        "price": 60000,
+        "kategori": "makanan"
+    },
+    {
+        "id": 1,
+        "name": "Pizza Pineapple",
+        "price": 65000,
+        "kategori": "makanan"
+    },
+    {
+        "id": 2,
+        "name": "Spaghetti Carbonara",
+        "price": 50000,
+        "kategori": "makanan"
+    },
+    {
+        "id": 3,
+        "name": "Ice Tea",
+        "price": 15000,
+        "kategori": "minuman"
+    },
+    {
+        "id": 4,
+        "name": "Ice Jelly",
+        "price": 18000,
+        "kategori": "minuman"
+    }
+]
