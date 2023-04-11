@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(400, 35),
                     backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 3 : Flutter Introduction')),
+                child: const Text('Week 4 : Order App')),
             const Padding(padding: EdgeInsets.all(8)),
             ElevatedButton(
                 onPressed: () {
