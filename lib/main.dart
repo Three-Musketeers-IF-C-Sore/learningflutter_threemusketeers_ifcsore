@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/flutter_introduction.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/w3_simple_calculator.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/widgets/home/button.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/widgets/main/appbar.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/service/navigate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,129 +39,73 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: Colors.purpleAccent.shade400,
-      ),
+      appBar: const MainAppBar(title: "Learning Flutter"),
       body: Center(
-          child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const SizedBox(
-              width: 400,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Welcome",
-                  textAlign: TextAlign.left,
-                  style: $heading1Bold,
-                  selectionColor: $primary500,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SizedBox(
+                  width: 400,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Welcome",
+                      textAlign: TextAlign.left,
+                      style: $heading1Bold,
+                      selectionColor: $primary500,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            const Padding(padding: EdgeInsets.all(30)),
-            const SizedBox(
-              width: 400,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "List of Content",
-                  textAlign: TextAlign.left,
-                  style: $heading6Bold,
-                  selectionColor: $primary500,
+                const Padding(padding: EdgeInsets.all(30)),
+
+                const SizedBox(
+                  width: 400,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "List of Content",
+                      textAlign: TextAlign.left,
+                      style: $heading6Bold,
+                      selectionColor: $primary500,
+                    ),
+                  ),
                 ),
-              ),
+                const Padding(padding: EdgeInsets.all(8)),
+
+                HomeButton(text: "Week 1-2: Flutter Introduction", handleOnPressed: () => {
+                  navigate(context, const FlutterIntro()),
+                }),
+                const Padding(padding: EdgeInsets.all(8)),
+
+                HomeButton(text: "Week 3: Simple Calculator", handleOnPressed: () => {
+                  navigate(context, const SimpleCalculator()),
+                }),
+                const Padding(padding: EdgeInsets.all(8)),
+
+                HomeButton(text: "Week 4: ", handleOnPressed: () => {}),
+                const Padding(padding: EdgeInsets.all(8)),
+
+                HomeButton(text: "Week 5: ", handleOnPressed: () => {}),
+                const Padding(padding: EdgeInsets.all(8)),
+
+                HomeButton(text: "Week 6: ", handleOnPressed: () => {}),
+                const Padding(padding: EdgeInsets.all(8)),
+
+                HomeButton(text: "Week 7: ", handleOnPressed: () => {}),
+                const Padding(padding: EdgeInsets.all(8)),
+
+                HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
+                const Padding(padding: EdgeInsets.all(30)),
+
+                HomeButton(isOutlined: true, text: "About Us", handleOnPressed: () => {}),
+              ],
             ),
-            const Padding(padding: EdgeInsets.all(8)),
-            ElevatedButton(
-                onPressed: () {
-                  Route route = MaterialPageRoute(
-                      builder: (context) => const FlutterIntro());
-                  Navigator.push(context, route);
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 1 : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(8)),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 2 : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(8)),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 3 : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(8)),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 4 : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(8)),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 5 : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(8)),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 6 : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(8)),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Week 7 : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(8)),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.purpleAccent.shade400),
-                child: const Text('Bonus : Flutter Introduction')),
-            const Padding(padding: EdgeInsets.all(30)),
-            ElevatedButton(
-                onPressed: () {
-                  //
-                },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(400, 35),
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.purpleAccent.shade400,
-                    side:
-                        const BorderSide(width: 1, color: Colors.purpleAccent)),
-                child: const Text('About Us')),
-          ],
-        ),
-      )),
+          )
+        )
+      ),
     );
   }
 }
