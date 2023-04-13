@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:learningflutter_threemusketeers_ifcsore/flutter_introduction.dart';
+import './providers/menu_provider.dart';
+import './providers/cart_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/flutter_introduction.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/w3_simple_calculator.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/widgets/home/button.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/widgets/main/appbar.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/service/navigate.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,12 +19,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => MenuProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(title: 'Learning Flutter'),
       ),
-      home: const MyHomePage(title: 'Learning Flutter'),
     );
   }
 }
@@ -60,7 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 const Padding(padding: EdgeInsets.all(30)),
-
                 const SizedBox(
                   width: 400,
                   child: Align(
@@ -73,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                const Padding(padding: EdgeInsets.all(8)),
+                const Padding(padding: EdgeInsets.all(25)),
 
                 HomeButton(text: "Week 1-2: Flutter Introduction", handleOnPressed: () => {
                   navigate(context, const FlutterIntro()),
@@ -105,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           )
         )
-      ),
+      ),      
     );
   }
 }
