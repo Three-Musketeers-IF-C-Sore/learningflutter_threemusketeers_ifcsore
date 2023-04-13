@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          unselectedWidgetColor: Colors.white,
         ),
         home: const MyHomePage(title: 'Learning Flutter'),
       ),
