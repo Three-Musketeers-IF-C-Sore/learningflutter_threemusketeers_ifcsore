@@ -108,7 +108,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset('/images/intro.jpeg'),
+              Image.asset('assets/images/intro.jpeg'),
               const Padding(padding: EdgeInsets.all(8)),
               const Align(
                 alignment: Alignment.centerLeft,
@@ -176,7 +176,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
                 style: $heading5Bold,
               ),
               const Divider(),
-              Image.asset('/images/ide.jpeg'),
+              Image.asset('assets/images/ide.jpeg'),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
                   "Flutter supports plugins for IntelliJ, VS Code and Android Studio. It’s really down to preference, but I love using VS Code, just because it’s lightweight and gives me the ability to edit, build and debug with ease.", style: $body1Regular,),

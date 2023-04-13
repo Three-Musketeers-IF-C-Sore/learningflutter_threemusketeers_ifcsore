@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:provider/provider.dart';
 import '../models/menu.dart';
 import 'package:intl/intl.dart';
@@ -31,7 +32,7 @@ class _ItemListState extends State<ItemList> {
     final cart = Provider.of<CartProvider>(context);
 
     return Container(
-      color: const Color.fromARGB(255, 123, 48, 243),
+      color: $primary500,
       margin: const EdgeInsets.only(bottom: 5),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -39,11 +40,11 @@ class _ItemListState extends State<ItemList> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
           Flexible(
-            flex: 5,
-            child: Text("${menuData.name!} ${menuData.kategori}", style: const TextStyle(color: Colors.white),),
+            flex: 4,
+            child: Text(menuData.name!, style: const TextStyle(color: Colors.white),),
           ),
           Flexible(
-            flex: 2,
+            flex: 3,
             child:
               Row(
                 children: [
@@ -77,6 +78,10 @@ class _ItemListState extends State<ItemList> {
                         setState(() {
                           isQtyEmpty = false;
                           cart.addCart(menuData.id!, menuData.name!, menuData.price!, int.parse(qtyCtrl.text), menuData.kategori!);
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                            content: Text("Added to cart successfully"),
+                            duration: Duration(milliseconds: 500),
+                          ));
                         });
                       }
                     }, 
