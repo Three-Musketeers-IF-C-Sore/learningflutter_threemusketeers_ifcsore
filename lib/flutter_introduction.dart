@@ -291,4 +291,3 @@ class _FlutterIntroState extends State<FlutterIntro> {
     );
   }
 }
-
