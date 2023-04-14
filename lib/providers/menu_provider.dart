@@ -9,7 +9,7 @@ class MenuProvider with ChangeNotifier {
 
   Future<void> getAndSetData (context) async{
     try {
-      final response = await DefaultAssetBundle.of(context).loadString('json/menu.json');
+      final response = await DefaultAssetBundle.of(context).loadString('assets/json/menu.json');
       final data = jsonDecode(response) as List;
 
       List<Menu> fetched = [];

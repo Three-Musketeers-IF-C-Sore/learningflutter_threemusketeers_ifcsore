@@ -34,43 +34,71 @@ class _FlutterIntroState extends State<FlutterIntro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: isReadMode == true ? Colors.orange.shade100 : Colors.white,
-      appBar: MainAppBar(
-        title: "Flutter", 
-        actionsBuilder: [
-          PopupMenuItem(
-            value: "read",
-            child: Container(
-              color: isReadMode ? Colors.blue.shade400 : Colors.white,
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.chrome_reader_mode_outlined,
-                    color: Colors.black,
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 10)),
-                  Text('Read Mode'),
-                ],
-              ),
-            ),
+      backgroundColor:
+          isReadMode == true ? Colors.orange.shade100 : Colors.white,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.white,
           ),
-          PopupMenuItem(
-            value: "up",
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.arrow_upward,
-                    color: Colors.black,
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 10)),
-                  Text('Scroll Up')
-                ],
-              ),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
+        title: const Text(
+          'Flutter',
+          style: $heading2Light,
+        ),
+        backgroundColor: Colors.purple,
+        actions: [
+          PopupMenuButton(
+            icon: const Icon(
+              Icons.more_vert,
+              color: Colors.white,
             ),
-          ),
+            itemBuilder: (context) {
+              return [
+                PopupMenuItem(
+                  value: "read",
+                  child: Container(
+                    color: isReadMode ? Colors.blue.shade400 : Colors.white,
+                    padding: const EdgeInsets.all(10),
+                    child: Row(children: const [
+                      Icon(
+                        Icons.chrome_reader_mode_outlined,
+                        color: Colors.black,
+                      ),
+                      Padding(padding: EdgeInsets.only(left: 10)),
+                      Text('Read Mode'),
+                    ]),
+                  ),
+                ),
+                PopupMenuItem(
+                  value: "up",
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(children: const [
+                      Icon(
+                        Icons.arrow_upward,
+                        color: Colors.black,
+                      ),
+                      Padding(padding: EdgeInsets.only(left: 10)),
+                      Text('Scroll Up')
+                    ]),
+                  ),
+                )
+              ];
+            },
+            onSelected: (value) {
+              if (value == "read") {
+                setState(() {
+                  isReadMode = !isReadMode;
+                });
+              } else if (value == "up") {
+                _scrollToTop();
+              }
+            },
+          )
         ],
       ),
       body: SingleChildScrollView(
@@ -79,7 +107,6 @@ class _FlutterIntroState extends State<FlutterIntro> {
           padding:
               const EdgeInsets.only(top: 40, bottom: 85, left: 15, right: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset('assets/images/intro.jpeg'),
               const Padding(padding: EdgeInsets.all(8)),
@@ -92,25 +119,24 @@ class _FlutterIntroState extends State<FlutterIntro> {
               ),
               const Divider(),
               const Text(
-                  'Flutter is a new and evolving cross-platform mobile development framework made by Google. It allows you to create beautiful, cross-platform mobile applications with native performance, all from one codebase.', style: $body1Regular,),
+                  'Flutter is a new and evolving cross-platform mobile development framework made by Google. It allows you to create beautiful, cross-platform mobile applications with native performance, all from one codebase.'),
               const Padding(padding: EdgeInsets.all(8)),
               RichText(
                 text: const TextSpan(
                     text: 'Its support for',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontFamily: "Plus Jakarta Sans", fontSize: 16.0, height: 1.4, color: Colors.black),
+                    style: TextStyle(color: Colors.black),
                     children: <TextSpan>[
                       TextSpan(
                           text: ' hot reloading ',
-                          style: $body1Bold),
+                          style: TextStyle(fontWeight: FontWeight.bold)),
                       TextSpan(
                           text:
-                              'allows a developer to quickly experiment and add features with split-second reloading times. This can speed up the development progress of applications substantially, setting Flutter apart from similar frameworks.', 
-                          style: $body1Regular,),
+                              'allows a developer to quickly experiment and add features with split-second reloading times. This can speed up the development progress of applications substantially, setting Flutter apart from similar frameworks.'),
                     ]),
               ),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
-                  'Flutter takes advantage of many different techniques in order to achieve high performance and productivity. These include:', style: $body1Regular,),
+                  'Flutter takes advantage of many different techniques in order to achieve high performance and productivity. These include:'),
               const Padding(padding: EdgeInsets.all(3)),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,7 +145,7 @@ class _FlutterIntroState extends State<FlutterIntro> {
                   Text("\u2022"),
                   Padding(padding: EdgeInsets.all(3)),
                   Expanded(
-                    child: Text("Compiling to native code", style: $body1Regular,),
+                    child: Text("Compiling to native code"),
                   )
                 ],
               ),
@@ -131,51 +157,68 @@ class _FlutterIntroState extends State<FlutterIntro> {
                   Padding(padding: EdgeInsets.all(3)),
                   Expanded(
                     child: Text(
-                      "Using widgets and only rendering them when necessary", style: $body1Regular,),
+                        "Using widgets and only rendering them when necessary"),
                   ),
                 ],
               ),
               const Padding(padding: EdgeInsets.all(8)),
-              const Text(
-                'What kind of things can I build with Flutter?',
-                style: $heading5Bold,
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'What kind of things can I build with Flutter?',
+                  style: $heading5Bold,
+                ),
               ),
               const Divider(),
               const Text(
-                  'Flutter is optimized to create 2D mobile apps that run on both Android and iOS. However, recent news shows that Flutter is expanding to the web, desktop and embedded environments. In your apps, you can implement geolocation, camera, network, 3rd-party SDKs and more.', style: $body1Regular,),
+                  'Flutter is optimized to create 2D mobile apps that run on both Android and iOS. However, recent news shows that Flutter is expanding to the web, desktop and embedded environments. In your apps, you can implement geolocation, camera, network, 3rd-party SDKs and more.'),
               const Padding(padding: EdgeInsets.all(8)),
-              const Text(
-                'What IDE can I use with Flutter?',
-                style: $heading5Bold,
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'What IDE can I use with Flutter?',
+                  style: $heading5Bold,
+                ),
               ),
               const Divider(),
               Image.asset('assets/images/ide.jpeg'),
               const Padding(padding: EdgeInsets.all(8)),
               const Text(
-                  "Flutter supports plugins for IntelliJ, VS Code and Android Studio. It’s really down to preference, but I love using VS Code, just because it’s lightweight and gives me the ability to edit, build and debug with ease.", style: $body1Regular,),
+                  "Flutter supports plugins for IntelliJ, VS Code and Android Studio. It’s really down to preference, but I love using VS Code, just because it’s lightweight and gives me the ability to edit, build and debug with ease."),
               const Padding(padding: EdgeInsets.all(8)),
-              const Text(
-                'What language is used to write Flutter Code?',
-                style: $heading5Bold,
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'What language is used to write Flutter Code?',
+                  style: $heading5Bold,
+                ),
               ),
               const Divider(),
               const Text(
-                  'Dart is the programming language that is used when coding Flutter applications. Dart was first shown back in October 2011, over 7 years ago. Dart follows object-oriented programming concepts like loops, classes, functions, methods, operators and some exceptions like throw and catch.', style: $body1Regular,),
+                  'Dart is the programming language that is used when coding Flutter applications. Dart was first shown back in October 2011, over 7 years ago. Dart follows object-oriented programming concepts like loops, classes, functions, methods, operators and some exceptions like throw and catch.'),
               const Padding(padding: EdgeInsets.all(8)),
-              const Text(
-                'Installing Flutter',
-                style: $heading5Bold,
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Installing Flutter',
+                  style: $heading5Bold,
+                ),
               ),
               const Divider(),
               const Text(
-                  'You will need to start by installing Flutter on your device. Flutter has full support for macOS, Linux and Windows. I would highly recommend using Visual Studio Code as your IDE, as well as the Dart Code extension, however Android Studio and IntelliJ are great alternatives.', style: $body1Regular,),
+                  'You will need to start by installing Flutter on your device. Flutter has full support for macOS, Linux and Windows. I would highly recommend using Visual Studio Code as your IDE, as well as the Dart Code extension, however Android Studio and IntelliJ are great alternatives.'),
               const Padding(padding: EdgeInsets.all(8)),
-              const Text(
-                'Creating a new Flutter Project',
-                style: $heading5Bold,
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Creating a new Flutter Project',
+                  style: $heading5Bold,
+                ),
               ),
               const Divider(),
-              const Text('Using terminal:'),
+              const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Using terminal:')),
               const Padding(padding: EdgeInsets.all(3)),
               Container(
                 width: double.infinity,
@@ -248,3 +291,4 @@ class _FlutterIntroState extends State<FlutterIntro> {
     );
   }
 }
+

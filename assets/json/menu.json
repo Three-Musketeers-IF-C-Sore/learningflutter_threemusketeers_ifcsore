@@ -2,31 +2,31 @@
     {
         "id": 0,
         "name": "Pizza Meat Lovers",
-        "price": 60000,
+        "price": 60000.0,
         "kategori": "makanan"
     },
     {
         "id": 1,
         "name": "Pizza Pineapple",
-        "price": 65000,
+        "price": 65000.0,
         "kategori": "makanan"
     },
     {
         "id": 2,
         "name": "Spaghetti Carbonara",
-        "price": 50000,
+        "price": 50000.0,
         "kategori": "makanan"
     },
     {
         "id": 3,
         "name": "Ice Tea",
-        "price": 15000,
+        "price": 15000.0,
         "kategori": "minuman"
     },
     {
         "id": 4,
         "name": "Ice Jelly",
-        "price": 18000,
+        "price": 18000.0,
         "kategori": "minuman"
     }
 ]
