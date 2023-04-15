@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
-import 'package:learningflutter_threemusketeers_ifcsore/widgets/main/appbar.dart';
 
 class FlutterIntro extends StatefulWidget {
   const FlutterIntro({super.key});
