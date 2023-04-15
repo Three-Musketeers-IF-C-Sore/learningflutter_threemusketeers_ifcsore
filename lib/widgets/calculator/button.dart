@@ -27,7 +27,7 @@ class _CalculatorButtonState extends State<CalculatorButton> {
               width: 2,
             ),
           ),
-          onPressed: () => {},
+          onPressed: () => widget.handleOnPressed(),
           child: Text(
             widget.text
           ),
