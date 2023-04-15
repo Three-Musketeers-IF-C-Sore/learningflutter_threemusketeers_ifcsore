@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/confirm_order_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/service/navigate.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:provider/provider.dart';
 import './providers/cart_provider.dart';
@@ -189,7 +190,7 @@ class _CartPageState extends State<CartPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                 SizedBox(
-                  width: 200,
+                  width: 152,
                   height: 30,
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
@@ -203,18 +204,17 @@ class _CartPageState extends State<CartPage> {
                 ),
                 const Padding(padding: EdgeInsets.only(left: 5)),
                 SizedBox(
-                  width: 200,
+                  width: 152,
                   height: 30,
                   child: ElevatedButton(    
                     style: ElevatedButton.styleFrom(
                       backgroundColor: $primary500,
                     ),       
-                    onPressed: () {
+                    onPressed: () {                    
                       setState(() {
                         cart.items.clear();
                       });
-                      Route route = MaterialPageRoute(builder: (context) => const OrderConfirm());
-                      Navigator.push(context, route);
+                      navigate(context, const OrderConfirm());
                     }, 
                     child: const Text('Order')),
                 )

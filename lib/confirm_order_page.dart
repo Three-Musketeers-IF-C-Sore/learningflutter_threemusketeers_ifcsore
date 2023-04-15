@@ -20,7 +20,7 @@ class OrderConfirm extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image.asset('/images/Logo_Centang.png', width: 350,),
+              Image.asset('assets/images/Logo_Centang.png', width: 350,),
               const Text('Order successful!', style: $heading6Bold,),
               const Text('We will immediately deliver', style: $heading6Bold,),
               const Text('your order...', style: $heading6Bold,),
