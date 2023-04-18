@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/setting_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
+import 'mikroskil_card_page.dart';
 import 'package:provider/provider.dart';
 
 class MikroskilPage extends StatefulWidget {
@@ -74,23 +75,22 @@ class _MikroskilPageState extends State<MikroskilPage> {
         child: Padding(
           padding:
               const EdgeInsets.only(top: 40, bottom: 85, left: 15, right: 15),
-          child: Column(
-            children: [
-              Image.asset(
-                'assets/images/Mikroskil.png',
-                width: 350,
+          child: Column(children: [
+            Image.asset(
+              'assets/images/Mikroskil.jpeg',
+              width: 350,
+            ),
+            const Padding(padding: EdgeInsets.all(8)),
+            const Align(
+              alignment: Alignment.center,
+              child: Text(
+                'Program Pendidikan',
+                style: $heading3Bold,
               ),
-              const Padding(padding: EdgeInsets.all(8)),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Program Pendidikan',
-                  style: $heading3Bold,
-                ),
-              ),
-              const Divider(),
-            ],
-          ),
+            ),
+            const Divider(),
+            Box(),
+          ]),
         ),
       ),
     );
