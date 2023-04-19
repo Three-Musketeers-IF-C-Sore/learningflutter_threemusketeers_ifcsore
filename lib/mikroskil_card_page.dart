@@ -89,8 +89,15 @@ class _BoxState extends State<Box> {
               ),
             ]),
             const Divider(),
-            Row(
-              children: [const Text('S2 Teknologi Informasi')],
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                dropdownValueOne == 'Informatika'
+                    ? '$dropdownValueTwo'
+                    : '$dropdownValueThree',
+                style: $heading3Bold,
+                textAlign: TextAlign.center,
+              ),
             )
           ],
         ),
