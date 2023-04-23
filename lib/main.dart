@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/cart_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app.dart';
 import './providers/menu_provider.dart';
 import './providers/cart_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
@@ -113,7 +114,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 HomeButton(text: "Week 6: ", handleOnPressed: () => {}),
                 const Padding(padding: EdgeInsets.all(8)),
 
-                HomeButton(text: "Week 7: ", handleOnPressed: () => {}),
+                HomeButton(text: "Week 7: ", handleOnPressed: () => {
+                  navigate(context, const CourseApp())
+                }),
                 const Padding(padding: EdgeInsets.all(8)),
 
                 HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
