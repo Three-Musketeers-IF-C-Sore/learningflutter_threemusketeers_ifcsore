@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/cart_page.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/mikroskil_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app.dart';
 import './providers/menu_provider.dart';
@@ -58,76 +59,79 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: const MainAppBar(title: "Learning Flutter"),
       body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const SizedBox(
-                  width: 400,
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Welcome",
-                      textAlign: TextAlign.left,
-                      style: $heading1Bold,
-                      selectionColor: $primary500,
-                    ),
-                  ),
+          child: SingleChildScrollView(
+              child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const SizedBox(
+              width: 400,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Welcome",
+                  textAlign: TextAlign.left,
+                  style: $heading1Bold,
+                  selectionColor: $primary500,
                 ),
-                const Padding(padding: EdgeInsets.all(30)),
-                const SizedBox(
-                  width: 400,
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "List of Content",
-                      textAlign: TextAlign.left,
-                      style: $heading6Bold,
-                      selectionColor: $primary500,
-                    ),
-                  ),
-                ),
-                const Padding(padding: EdgeInsets.all(25)),
-
-                HomeButton(text: "Week 1-2: Flutter Introduction", handleOnPressed: () => {
-                  navigate(context, const FlutterIntro()),
-                }),
-                const Padding(padding: EdgeInsets.all(8)),
-
-                HomeButton(text: "Week 3: Simple Calculator", handleOnPressed: () => {
-                  navigate(context, const SimpleCalculator()),
-                }),
-                const Padding(padding: EdgeInsets.all(8)),
-
-                HomeButton(text: "Week 4: Order App", handleOnPressed: () => {
-                  navigate(context, const OrderApp()),
-                }),
-                const Padding(padding: EdgeInsets.all(8)),
-
-                HomeButton(text: "Week 5: Your Cart", handleOnPressed: () => {
-                  navigate(context, const CartPage()),
-                }),
-                const Padding(padding: EdgeInsets.all(8)),
-
-                HomeButton(text: "Week 6: ", handleOnPressed: () => {}),
-                const Padding(padding: EdgeInsets.all(8)),
-
-                HomeButton(text: "Week 7: ", handleOnPressed: () => {
-                  navigate(context, const CourseApp())
-                }),
-                const Padding(padding: EdgeInsets.all(8)),
-
-                HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
-                const Padding(padding: EdgeInsets.all(30)),
-
-                HomeButton(isOutlined: true, text: "About Us", handleOnPressed: () => {}),
-              ],
+              ),
             ),
-          )
-        )
-      ),      
+            const Padding(padding: EdgeInsets.all(30)),
+            const SizedBox(
+              width: 400,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "List of Content",
+                  textAlign: TextAlign.left,
+                  style: $heading6Bold,
+                  selectionColor: $primary500,
+                ),
+              ),
+            ),
+            const Padding(padding: EdgeInsets.all(25)),
+            HomeButton(
+                text: "Week 1-2: Flutter Introduction",
+                handleOnPressed: () => {
+                      navigate(context, const FlutterIntro()),
+                    }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 3: Simple Calculator",
+                handleOnPressed: () => {
+                      navigate(context, const SimpleCalculator()),
+                    }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 4: Order App",
+                handleOnPressed: () => {
+                      navigate(context, const OrderApp()),
+                    }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 5: Your Cart",
+                handleOnPressed: () => {
+                      navigate(context, const CartPage()),
+                    }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 6: Mikroskil [Fakultas:Informatika]",
+                handleOnPressed: () => {
+                  navigate(context, const MikroskilPage()),
+                }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(text: "Week 7: ", handleOnPressed: () => {
+              navigate(context, const CourseApp()),
+            }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
+            const Padding(padding: EdgeInsets.all(30)),
+            HomeButton(
+                isOutlined: true, text: "About Us", handleOnPressed: () => {}),
+          ],
+        ),
+      ))),
     );
   }
 }

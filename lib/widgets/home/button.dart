@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 
-
 class HomeButton extends StatefulWidget {
-  const HomeButton({super.key, required this.text, required this.handleOnPressed, this.isOutlined = false});
+  const HomeButton(
+      {super.key,
+      required this.text,
+      required this.handleOnPressed,
+      this.isOutlined = false});
 
   final bool isOutlined;
   final String text;
@@ -24,7 +27,11 @@ class _HomeButtonState extends State<HomeButton> {
           fixedSize: const Size(400, 35),
           backgroundColor: widget.isOutlined ? $white : $primary500,
           foregroundColor: widget.isOutlined ? $primary500 : null,
-          side: widget.isOutlined ? const BorderSide(width: 1, color: $primary500) : null,
+          side: widget.isOutlined
+              ? const BorderSide(width: 1, color: $primary500)
+              : null,
+          alignment:
+              widget.isOutlined ? Alignment.center : Alignment.centerLeft,
         ),
         child: Text(widget.text));
   }
