@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/setting_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 import 'mikroskil_card_page.dart';
-import 'package:provider/provider.dart';
 
 class MikroskilPage extends StatefulWidget {
   const MikroskilPage({super.key});
@@ -31,7 +30,7 @@ class _MikroskilPageState extends State<MikroskilPage> {
   void _goToSettingPage() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SettingPage()),
+      MaterialPageRoute(builder: (context) => const Setting()),
     );
   }
 
@@ -76,10 +75,7 @@ class _MikroskilPageState extends State<MikroskilPage> {
           padding:
               const EdgeInsets.only(top: 40, bottom: 85, left: 15, right: 15),
           child: Column(children: [
-            Image.asset(
-              'assets/images/Mikroskil.jpeg',
-              width: 350,
-            ),
+            Image.asset('assets/images/mikroskil.jpeg'),
             const Padding(padding: EdgeInsets.all(8)),
             const Align(
               alignment: Alignment.center,

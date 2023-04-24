@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'mikroskil_page.dart';
-import 'package:learningflutter_threemusketeers_ifcsore/setting_page.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 
 class Box extends StatefulWidget {
@@ -11,11 +10,37 @@ class Box extends StatefulWidget {
 List<String> list1 = ['Informatika', 'Bisnis'];
 List<String> list2 = [
   'S2 Teknologi Informasi',
-  'S1 Teknis Informatika',
+  'S1 Teknik Informatika',
   'S1 Sistem Informasi',
   'S1 Teknologi Informasi'
 ];
 List<String> list3 = ['S1 Manajemen', 'S1 Akuntansi'];
+
+String _getMappedValue1(String? value) {
+  switch (value) {
+    case 'S2 Teknologi Informasi':
+      return 'Kumpulan kajian atau ranah topik yang merencanakan, menganalisis, merancang, menentukan, memilih dan menerapkan teknologi informasi yang paling sesuai untuk mengoptimalkan layanan bisnis bagi organisasi, instansi dan perusahaan melalui inovasi tanpa henti.';
+    case 'S1 Teknik Informatika':
+      return 'Kumpulan ilmu dan teknik di bidang komputer yang diterapkan untuk menghasilkan solusi perangkat lunak yang sesuai terhadap permasalahan bisnis dan ilmiah.';
+    case 'S1 Sistem Informasi':
+      return 'Technology-Enabled Business Development: Kombinasi dari "aspek teknis" dan "aspek manajerial" untuk menerjemahkan "kebutuhan bisnis" menjadi "kebutuhan teknis" teknologi informasi.';
+    case 'S1 Teknologi Informasi':
+      return 'Mempersiapkan mahasiswa agar memiliki keahlian dan keterampilan di bidang teknologi digital untuk mendukung pengembangan bisnis';
+    default:
+      return ''; // Return an empty string for unknown values or null values
+  }
+}
+
+String _getMappedValue2(String? value) {
+  switch (value) {
+    case 'S1 Manajemen':
+      return 'Menghasilkan lulusan berkualitas yang memiliki ilmu pengetahuan dan keterampilan Manajemen, serta menguasai teknologi informasi dalam pengelolaan bisnis yang relevan dengan kebutuhan masyarakat.';
+    case 'S1 Akuntansi':
+      return 'Menghasilkan SDM profesional dan unggul di bidang akuntansi berbasis teknologi informasi dalam berbagai bidang profesi akuntansi.';
+    default:
+      return ''; // Return an empty string for unknown values or null values
+  }
+}
 
 class _BoxState extends State<Box> {
   String? dropdownValueOne = list1.first;
@@ -26,80 +51,119 @@ class _BoxState extends State<Box> {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
+        color: $primary500,
         elevation: 0,
         shape: RoundedRectangleBorder(
           side: BorderSide(
             color: Theme.of(context).colorScheme.outline,
           ),
         ),
-        child: Column(
-          children: [
-            Row(children: [
-              const Expanded(
-                flex: 8,
-                child: Text('Fakultas'),
-              ),
-              Expanded(
-                flex: 4,
-                child: DropdownButton<String>(
-                  value: dropdownValueOne,
-                  icon: const Icon(Icons.arrow_downward),
-                  elevation: 16,
-                  onChanged: (String? value) {
-                    setState(() {
-                      dropdownValueOne = value!;
-                      dropdownValueTwo =
-                          list2.first; // Reset the value of dropdownValueTwo
-                    });
-                  },
-                  items: list1.map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
+        child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Row(children: [
+                const Expanded(
+                  flex: 7,
+                  child: Text(
+                    'Fakultas',
+                    style: TextStyle(
+                      color: $white,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 5,
+                  child: DropdownButton<String>(
+                    dropdownColor: $primary500,
+                    value: dropdownValueOne,
+                    icon: const Icon(
+                      Icons.arrow_downward,
+                      color: $white,
+                    ),
+                    elevation: 16,
+                    onChanged: (String? value) {
+                      setState(() {
+                        dropdownValueOne = value!;
+                        dropdownValueTwo =
+                            list2.first; // Reset the value of dropdownValueTwo
+                      });
+                    },
+                    items: list1.map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(
+                            color: $white,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ]),
+              const Divider(),
+              Row(children: [
+                const Expanded(
+                  flex: 7,
+                  child: Text(
+                    'Jurusan',
+                    style: TextStyle(
+                      color: $white,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 5,
+                  child: dropdownValueOne == 'Informatika'
+                      ? DropDownButtonTwo(
+                          dropdownValue: dropdownValueTwo,
+                          dropDownCallBack: (String? value) {
+                            setState(() {
+                              dropdownValueTwo = value!;
+                            });
+                          },
+                        )
+                      : DropDownButtonThree(
+                          dropdownValue: dropdownValueThree,
+                          dropDownCallBack: (String? value) {
+                            setState(() {
+                              dropdownValueThree = value!;
+                            });
+                          },
+                        ),
+                ),
+              ]),
+              const Divider(),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  dropdownValueOne == 'Informatika'
+                      ? '$dropdownValueTwo'
+                      : '$dropdownValueThree',
+                  style: $heading3Bold.copyWith(color: $white),
+                  textAlign: TextAlign.center,
                 ),
               ),
-            ]),
-            const Divider(),
-            Row(children: [
-              const Expanded(
-                flex: 8,
-                child: Text('Jurusan'),
+              Padding(padding: EdgeInsets.all(10)),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 4,
+                    child: Text(
+                        dropdownValueOne == 'Informatika'
+                            ? _getMappedValue1(dropdownValueTwo)
+                            : _getMappedValue2(
+                                dropdownValueThree), // Display the selected value in dropdownValueFour for 'Informatika' option, otherwise display an empty string
+                        style: $body1Regular.copyWith(
+                            color: $white) // Customize the font size as needed
+                        ),
+                  ),
+                ],
               ),
-              Expanded(
-                flex: 4,
-                child: dropdownValueOne == 'Informatika'
-                    ? DropDownButtonTwo(
-                        dropdownValue: dropdownValueTwo,
-                        dropDownCallBack: (String? value) {
-                          setState(() {
-                            dropdownValueTwo = value!;
-                          });
-                        },
-                      )
-                    : DropDownButtonThree(
-                        dropdownValue: dropdownValueThree,
-                        dropDownCallBack: (String? value) {
-                          setState(() {
-                            dropdownValueThree = value!;
-                          });
-                        },
-                      ),
-              ),
-            ]),
-            const Divider(),
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                dropdownValueOne == 'Informatika'
-                    ? '$dropdownValueTwo'
-                    : '$dropdownValueThree',
-                style: $heading3Bold,
-                textAlign: TextAlign.center,
-              ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -114,6 +178,7 @@ class DropDownButtonTwo extends StatefulWidget {
     required this.dropdownValue,
     required this.dropDownCallBack,
     Key? key,
+    Color? color,
   });
 
   @override
@@ -125,13 +190,19 @@ class _DropDownButtonTwoState extends State<DropDownButtonTwo> {
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       value: widget.dropdownValue,
-      icon: const Icon(Icons.arrow_downward),
+      dropdownColor: $primary500,
+      icon: const Icon(Icons.arrow_downward, color: $white),
       elevation: 16,
       onChanged: widget.dropDownCallBack,
       items: list2.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
-          child: Text(value),
+          child: Text(
+            value,
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
         );
       }).toList(),
     );
@@ -146,6 +217,7 @@ class DropDownButtonThree extends StatefulWidget {
     required this.dropdownValue,
     required this.dropDownCallBack,
     Key? key,
+    Color? color,
   });
 
   @override
@@ -153,6 +225,77 @@ class DropDownButtonThree extends StatefulWidget {
 }
 
 class _DropDownButtonThreeState extends State<DropDownButtonThree> {
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: widget.dropdownValue,
+      dropdownColor: $primary500,
+      icon: const Icon(Icons.arrow_downward, color: $white),
+      elevation: 16,
+      onChanged: widget.dropDownCallBack,
+      style: TextStyle(color: $white),
+      items: list3.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(
+            value,
+            style: TextStyle(
+              color: Colors.white, // Set the desired text color
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+}
+
+class DropDownButtonFour extends StatefulWidget {
+  final String? dropdownValue;
+  final Function(String?) dropDownCallBack;
+
+  const DropDownButtonFour({
+    required this.dropdownValue,
+    required this.dropDownCallBack,
+    Key? key,
+  });
+
+  @override
+  State<DropDownButtonFour> createState() => _DropDownButtonFourState();
+}
+
+class _DropDownButtonFourState extends State<DropDownButtonFour> {
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: widget.dropdownValue,
+      icon: const Icon(Icons.arrow_downward),
+      elevation: 16,
+      onChanged: widget.dropDownCallBack,
+      items: list3.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+
+class DropDownButtonFive extends StatefulWidget {
+  final String? dropdownValue;
+  final Function(String?) dropDownCallBack;
+
+  const DropDownButtonFive({
+    required this.dropdownValue,
+    required this.dropDownCallBack,
+    Key? key,
+  });
+
+  @override
+  State<DropDownButtonFive> createState() => _DropDownButtonFiveState();
+}
+
+class _DropDownButtonFiveState extends State<DropDownButtonFive> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(

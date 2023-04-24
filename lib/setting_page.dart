@@ -1,65 +1,119 @@
 import 'package:flutter/material.dart';
-import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
-import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
-import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
-import 'package:provider/provider.dart';
 
-class SettingPage extends StatelessWidget {
-  const SettingPage({super.key});
-
-  get dark => null;
+class MyWidget extends StatelessWidget {
+  const MyWidget({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    final prov = Provider.of<SettingProvider>(context);
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios_new,
-            color: Colors.white,
-          ),
-          onPressed: () => Navigator.of(context).pop(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Setting(),
+    );
+  }
+}
+
+class Setting extends StatefulWidget {
+  const Setting({Key? key});
+
+  @override
+  State<Setting> createState() => _MySettingState();
+}
+
+class _MySettingState extends State<Setting> {
+  bool _switch = false;
+  bool isReadMode = false;
+
+  final ThemeData _dark =
+      ThemeData(brightness: Brightness.dark, primaryColor: Colors.white);
+  final ThemeData _light =
+      ThemeData(brightness: Brightness.light, primaryColor: Colors.black);
+
+  @override
+  Widget build(BuildContext context) {
+    ThemeData currentTheme = _switch && !isReadMode ? _dark : _light;
+    Color backgroundColor = isReadMode
+        ? Colors.orange.shade100
+        : currentTheme.scaffoldBackgroundColor;
+
+    if (_switch && isReadMode) {
+      // Automatically turn off _switch and isReadMode when _switch is turned on
+      _switch = false;
+      isReadMode = false;
+    }
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: currentTheme,
+      home: Scaffold(
+        backgroundColor: backgroundColor,
+        appBar: AppBar(
+          title: const Text("Light & Dark Theme"),
         ),
-        title: const Text('Setting'),
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        backgroundColor: $primary500,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            const Text(
-              'Display Setting',
-              style: $heading6Bold,
-            ),
-            const Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text('Dark Mode'),
-                Switch(
-                  value: prov.enableDarkMode,
-                  activeColor: Colors.green,
-                  onChanged: (val) {
-                    prov.setBrightness = val;
-                  },
-                )
-              ],
-            )
-          ]),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Icon(
+                Icons.lightbulb_circle_outlined,
+                size: 35,
+                color: Colors.yellowAccent,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Text(
+                "Switch",
+                style: TextStyle(
+                  fontSize: 40,
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _switch = !_switch;
+                    if (_switch && isReadMode) {
+                      isReadMode = false;
+                    }
+                  });
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Text('Dark Mode'),
+                    Switch(
+                      value: _switch,
+                      onChanged: null,
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isReadMode = !isReadMode;
+                    if (isReadMode && _switch) {
+                      _switch = false;
+                    }
+                  });
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Text('Read Mode'),
+                    Switch(
+                      value: isReadMode,
+                      onChanged: null,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      floatingActionButton: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: $primary500,
-          ),
-          onPressed: () {
-            Navigator.of(context).popUntil((route) => route.isFirst);
-          },
-          child: const Text('Back to Home Page')),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
