@@ -1,0 +1,62 @@
+{
+    "for_you_courses": [
+        {
+            "id": 0,
+            "name": "Flutter Introduction",
+            "image": "intro.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 1"
+        },
+        {
+            "id": 1,
+            "name": "Dart Introduction",
+            "image": "ide.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 2"
+        },
+        {
+            "id": 2,
+            "name": "Mobile Development Introduction",
+            "image": "intro.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 3"
+        }
+    ],
+    "popular_courses": [
+        {
+            "id": 0,
+            "name": "Flutter Introduction",
+            "image": "intro.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 1"
+        },
+        {
+            "id": 1,
+            "name": "Dart Introduction",
+            "image": "ide.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 2"
+        },
+        {
+            "id": 2,
+            "name": "Mobile Development Introduction",
+            "image": "intro.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 3"
+        }
+    ],
+    "last_studied_courses": [
+        {
+            "id": 0,
+            "name": "Flutter Introduction",
+            "image": "intro.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 1"
+        },
+        {
+            "id": 1,
+            "name": "Dart Introduction",
+            "image": "ide.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 2"
+        },
+        {
+            "id": 2,
+            "name": "Mobile Development Introduction",
+            "image": "intro.jpeg",
+            "desc": "Lorem ipsum dolor sit amet 3"
+        }
+    ]
+}

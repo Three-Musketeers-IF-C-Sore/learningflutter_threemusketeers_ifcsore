@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app/home.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/discover_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/widgets/main/appbar.dart';
@@ -16,8 +17,8 @@ class _CourseAppState extends State<CourseApp> {
   int _currentIndex = 0;
 
   final tabs = [
-    CourseAppHome(),
-    Center(child: Text('b'),),
+    const CourseAppHome(),
+    const DiscoverPage(),
     Center(child: Text('c'),),
   ];
 

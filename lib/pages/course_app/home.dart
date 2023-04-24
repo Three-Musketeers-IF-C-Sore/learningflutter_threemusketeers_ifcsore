@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app/card.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 
 class CourseAppHome extends StatefulWidget {
@@ -9,15 +13,34 @@ class CourseAppHome extends StatefulWidget {
 }
 
 class _CourseAppHomeState extends State<CourseAppHome> {
+   List popularCourses = [];
+   List forYouCourses = [];
+   List lastStudiedCourses = [];
+   bool loaded = false;
+
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/json/home.json');
+    final data = await json.decode(response);
+    setState(() {
+      popularCourses = data["popular_courses"];
+      forYouCourses = data["for_you_courses"];
+      lastStudiedCourses = data["last_studied_courses"];
+      loaded = true;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
+    readJson();
+
     return SingleChildScrollView(
       padding: const EdgeInsets.only(left: 16, right: 16, top: 24),
       child: Column(
         children: [
+          Image.asset("assets/images/intro.jpeg"),
           Padding(
-            padding: EdgeInsets.only(bottom: 24.0),
+            padding: const EdgeInsets.only(top: 24.0),
             child: Column(
               children: [
                 const Align(
@@ -35,64 +58,9 @@ class _CourseAppHomeState extends State<CourseAppHome> {
                     padding: const EdgeInsets.only(top: 8),
                     child: Row(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: SizedBox(
-                            width: 176,
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  width: 176,
-                                  // height: 88,
-                                  child: Image.asset("assets/images/intro.jpeg"),
-                                ),
-                                Align(
-                                  child: Text(
-                                    "Data Structure and Algorithm",
-                                    style: $body2Regular,
-                                  ),
-                                  alignment: Alignment.topLeft,
-                                ),
-                                Align(
-                                  child: Text(
-                                    "University of Waterloo",
-                                    style: $caption1Regular,
-                                  ),
-                                  alignment: Alignment.topLeft,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: SizedBox(
-                            width: 176,
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  width: 176,
-                                  // height: 88,
-                                  child: Image.asset("assets/images/intro.jpeg"),
-                                ),
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    "Data Structure and Algorithm",
-                                    style: $body2Regular,
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    "University of Waterloo",
-                                    style: $caption1Regular,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                        if (loaded) 
+                          for (var item in popularCourses)
+                            CourseCard(courseTitle: item["name"], courseImage: item["image"], courseDesc: item["desc"])
                       ],
                     ),
                   ),
@@ -100,6 +68,65 @@ class _CourseAppHomeState extends State<CourseAppHome> {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: Column(
+              children: [
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "For You",
+                    style: $heading5Bold,
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Row(
+                      children: [
+                        if (loaded) 
+                          for (var item in forYouCourses)
+                            CourseCard(courseTitle: item["name"], courseImage: item["image"], courseDesc: item["desc"])
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: Column(
+              children: [
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Last Studied",
+                    style: $heading5Bold,
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Row(
+                      children: [
+                        if (loaded) 
+                          for (var item in lastStudiedCourses)
+                            CourseCard(courseTitle: item["name"], courseImage: item["image"], courseDesc: item["desc"])
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
         ],
       ),
     );
