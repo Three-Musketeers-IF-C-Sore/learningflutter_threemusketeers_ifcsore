@@ -67,6 +67,12 @@ flutter:
     - assets/images/ide.jpeg
     - assets/images/intro.jpeg
     - assets/images/Logo_Centang.png
+    - assets/images/binarySearch.png
+    - assets/images/database&query.png
+    - assets/images/dataStructure.jpg
+    - assets/images/dataScience.jpeg
+    - assets/images/cp.jpeg
+    - assets/images/undraw_Empty.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
