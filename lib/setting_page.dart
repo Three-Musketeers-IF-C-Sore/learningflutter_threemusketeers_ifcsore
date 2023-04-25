@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'change.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({Key? key});
@@ -20,9 +21,6 @@ class Setting extends StatefulWidget {
 }
 
 class _MySettingState extends State<Setting> {
-  bool _switch = false;
-  bool isReadMode = false;
-
   final ThemeData _dark =
       ThemeData(brightness: Brightness.dark, primaryColor: Colors.white);
   final ThemeData _light =
@@ -30,14 +28,14 @@ class _MySettingState extends State<Setting> {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData currentTheme = _switch && !isReadMode ? _dark : _light;
+    ThemeData currentTheme = isDarkMode && !isReadMode ? _dark : _light;
     Color backgroundColor = isReadMode
         ? Colors.orange.shade100
         : currentTheme.scaffoldBackgroundColor;
 
-    if (_switch && isReadMode) {
-      // Automatically turn off _switch and isReadMode when _switch is turned on
-      _switch = false;
+    if (isDarkMode && isReadMode) {
+      // Automatically turn off isDarkMode and isReadMode when isDarkMode is turned on
+      isDarkMode = false;
       isReadMode = false;
     }
 
@@ -47,7 +45,15 @@ class _MySettingState extends State<Setting> {
       home: Scaffold(
         backgroundColor: backgroundColor,
         appBar: AppBar(
-          title: const Text("Light & Dark Theme"),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios_new,
+              color: Colors.white,
+            ),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          title: const Text("Display"),
+          backgroundColor: Colors.purple,
         ),
         body: Center(
           child: Column(
@@ -73,8 +79,8 @@ class _MySettingState extends State<Setting> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    _switch = !_switch;
-                    if (_switch && isReadMode) {
+                    isDarkMode = !isDarkMode;
+                    if (isDarkMode && isReadMode) {
                       isReadMode = false;
                     }
                   });
@@ -84,8 +90,12 @@ class _MySettingState extends State<Setting> {
                   children: <Widget>[
                     const Text('Dark Mode'),
                     Switch(
-                      value: _switch,
-                      onChanged: null,
+                      value: isDarkMode,
+                      onChanged: (value) {
+                        setState(() {
+                          isDarkMode = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -94,8 +104,8 @@ class _MySettingState extends State<Setting> {
                 onTap: () {
                   setState(() {
                     isReadMode = !isReadMode;
-                    if (isReadMode && _switch) {
-                      _switch = false;
+                    if (isReadMode && isDarkMode) {
+                      isDarkMode = false;
                     }
                   });
                 },
@@ -105,7 +115,11 @@ class _MySettingState extends State<Setting> {
                     const Text('Read Mode'),
                     Switch(
                       value: isReadMode,
-                      onChanged: null,
+                      onChanged: (value) {
+                        setState(() {
+                          isReadMode = value;
+                        });
+                      },
                     ),
                   ],
                 ),
