@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/mikroskil_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/service/navigate.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 import 'package:provider/provider.dart';
 
 class MyWidget extends StatelessWidget {
@@ -30,11 +34,15 @@ class _MySettingState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     final setting = Provider.of<SettingProvider>(context);
-    
-    ThemeData currentTheme = setting.isDarkMode && !setting.isReadMode ? _dark : _light;
+
+    ThemeData currentTheme =
+        setting.isDarkMode && !setting.isReadMode ? _dark : _light;
     Color backgroundColor = setting.isReadMode
         ? Colors.orange.shade100
         : currentTheme.scaffoldBackgroundColor;
+
+    Color isDarkModeBackgroundColor =
+        setting.isDarkMode ? Colors.black : $primary500;
 
     // if (isDarkMode && isReadMode) {
     //   // Automatically turn off isDarkMode and isReadMode when isDarkMode is turned on
@@ -49,61 +57,62 @@ class _MySettingState extends State<Setting> {
         backgroundColor: backgroundColor,
         appBar: AppBar(
           leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios_new,
-              color: Colors.white,
-            ),
-            onPressed: () => Navigator.of(context).pop(),
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                color: Colors.white,
+              ),
+              onPressed: () => {navigate(context, const MikroskilPage())}),
+          centerTitle: true,
+          title: const Text(
+            "Display",
+            style: $heading2Light,
           ),
-          title: const Text("Display"),
-          backgroundColor: Colors.purple,
+          backgroundColor: isDarkModeBackgroundColor,
         ),
-        body: Center(
+        body: Padding(
+          padding: EdgeInsets.all(20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              const Icon(
-                Icons.lightbulb_circle_outlined,
-                size: 35,
-                color: Colors.yellowAccent,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              const Text(
-                "Switch",
-                style: TextStyle(
-                  fontSize: 40,
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Display Setting",
+                  style: $heading4Regular,
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              const Divider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  const Text(
+                    'Dark Mode',
+                    style: $body1Regular,
+                  ),
+                  Switch(
+                    value: setting.isDarkMode,
+                    onChanged: (value) {
+                      setState(() {
+                        setting.isDarkMode = value;
+                        if (setting.isReadMode) setting.isReadMode = false;
+                      });
+                    },
+                  ),
+                ],
               ),
               Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    const Text('Dark Mode'),
-                    Switch(
-                      value: setting.isDarkMode,
-                      onChanged: (value) {
-                        setState(() {
-                          setting.isDarkMode = value;
-                          if(setting.isReadMode) setting.isReadMode = false;
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  const Text('Read Mode'),
+                  const Text(
+                    'Read Mode',
+                    style: $body1Regular,
+                  ),
                   Switch(
                     value: setting.isReadMode,
                     onChanged: (value) {
                       setState(() {
                         setting.isReadMode = value;
-                        if(setting.isDarkMode) setting.isDarkMode = false;
+                        if (setting.isDarkMode) setting.isDarkMode = false;
                       });
                     },
                   ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
+import 'package:provider/provider.dart';
 
 class Box extends StatefulWidget {
   @override
@@ -47,15 +49,39 @@ class _BoxState extends State<Box> {
   String? dropdownValueTwo = list2.first;
   String? dropdownValueThree = list3.first;
 
+  final ThemeData _dark =
+      ThemeData(brightness: Brightness.dark, primaryColor: Colors.white);
+  final ThemeData _light =
+      ThemeData(brightness: Brightness.light, primaryColor: Colors.black);
+
   @override
   Widget build(BuildContext context) {
+    final setting = Provider.of<SettingProvider>(context);
+    ThemeData currentTheme =
+        setting.isDarkMode && !setting.isReadMode ? _dark : _light;
+    Color isReadModebackgroundColor = setting.isReadMode
+        ? Color.fromRGBO(244, 198, 156, 100)
+        : currentTheme.scaffoldBackgroundColor;
+
+    Color isDarkModebackgroundColor = setting.isDarkMode
+        ? Color.fromRGBO(22, 1, 60, 100)
+        : currentTheme.scaffoldBackgroundColor;
+
+    Color isReadModeColor = setting.isReadMode ? Colors.black : Colors.white;
+
+    Color cardColor = setting.isReadMode
+        ? isReadModebackgroundColor
+        : setting.isDarkMode
+            ? isDarkModebackgroundColor
+            : $primary500;
+
     return Center(
       child: Card(
-        color: $primary500,
+        color: cardColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
           side: BorderSide(
-            color: Theme.of(context).colorScheme.outline,
+            color: cardColor,
           ),
         ),
         child: Padding(
@@ -63,23 +89,24 @@ class _BoxState extends State<Box> {
           child: Column(
             children: [
               Row(children: [
-                const Expanded(
-                  flex: 7,
+                Expanded(
+                  flex: 6,
                   child: Text(
                     'Fakultas',
                     style: TextStyle(
-                      color: $white,
+                      color: isReadModeColor,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Expanded(
-                  flex: 5,
+                  flex: 6,
                   child: DropdownButton<String>(
-                    dropdownColor: $primary500,
+                    dropdownColor: cardColor,
                     value: dropdownValueOne,
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.arrow_downward,
-                      color: $white,
+                      color: isReadModeColor,
                     ),
                     elevation: 16,
                     onChanged: (String? value) {
@@ -95,7 +122,7 @@ class _BoxState extends State<Box> {
                         child: Text(
                           value,
                           style: TextStyle(
-                            color: $white,
+                            color: isReadModeColor,
                           ),
                         ),
                       );
@@ -105,17 +132,18 @@ class _BoxState extends State<Box> {
               ]),
               const Divider(),
               Row(children: [
-                const Expanded(
-                  flex: 7,
+                Expanded(
+                  flex: 6,
                   child: Text(
                     'Jurusan',
                     style: TextStyle(
-                      color: $white,
+                      color: isReadModeColor,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Expanded(
-                  flex: 5,
+                  flex: 6,
                   child: dropdownValueOne == 'Informatika'
                       ? DropDownButtonTwo(
                           dropdownValue: dropdownValueTwo,
@@ -142,7 +170,7 @@ class _BoxState extends State<Box> {
                   dropdownValueOne == 'Informatika'
                       ? '$dropdownValueTwo'
                       : '$dropdownValueThree',
-                  style: $heading3Bold.copyWith(color: $white),
+                  style: $heading6Bold.copyWith(color: isReadModeColor),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -157,7 +185,8 @@ class _BoxState extends State<Box> {
                             : _getMappedValue2(
                                 dropdownValueThree), // Display the selected value in dropdownValueFour for 'Informatika' option, otherwise display an empty string
                         style: $body1Regular.copyWith(
-                            color: $white) // Customize the font size as needed
+                            color:
+                                isReadModeColor) // Customize the font size as needed
                         ),
                   ),
                 ],
@@ -186,12 +215,35 @@ class DropDownButtonTwo extends StatefulWidget {
 }
 
 class _DropDownButtonTwoState extends State<DropDownButtonTwo> {
+  final ThemeData _dark =
+      ThemeData(brightness: Brightness.dark, primaryColor: Colors.white);
+  final ThemeData _light =
+      ThemeData(brightness: Brightness.light, primaryColor: Colors.black);
+
   @override
   Widget build(BuildContext context) {
+    final setting = Provider.of<SettingProvider>(context);
+
+    ThemeData currentTheme =
+        setting.isDarkMode && !setting.isReadMode ? _dark : _light;
+    Color isReadModebackgroundColor = setting.isReadMode
+        ? Color.fromRGBO(244, 198, 156, 100)
+        : currentTheme.scaffoldBackgroundColor;
+
+    Color isDarkModebackgroundColor = setting.isDarkMode
+        ? Color.fromRGBO(22, 1, 60, 100)
+        : currentTheme.scaffoldBackgroundColor;
+    Color isReadModeColor = setting.isReadMode ? Colors.black : Colors.white;
+    Color cardColor = setting.isReadMode
+        ? isReadModebackgroundColor
+        : setting.isDarkMode
+            ? isDarkModebackgroundColor
+            : $primary500;
+
     return DropdownButton<String>(
       value: widget.dropdownValue,
-      dropdownColor: $primary500,
-      icon: const Icon(Icons.arrow_downward, color: $white),
+      dropdownColor: cardColor,
+      icon: Icon(Icons.arrow_downward, color: isReadModeColor),
       elevation: 16,
       onChanged: widget.dropDownCallBack,
       items: list2.map<DropdownMenuItem<String>>((String value) {
@@ -200,7 +252,7 @@ class _DropDownButtonTwoState extends State<DropDownButtonTwo> {
           child: Text(
             value,
             style: TextStyle(
-              color: Colors.white,
+              color: isReadModeColor,
             ),
           ),
         );
@@ -225,22 +277,45 @@ class DropDownButtonThree extends StatefulWidget {
 }
 
 class _DropDownButtonThreeState extends State<DropDownButtonThree> {
+  final ThemeData _dark =
+      ThemeData(brightness: Brightness.dark, primaryColor: Colors.white);
+  final ThemeData _light =
+      ThemeData(brightness: Brightness.light, primaryColor: Colors.black);
+
   @override
   Widget build(BuildContext context) {
+    final setting = Provider.of<SettingProvider>(context);
+
+    ThemeData currentTheme =
+        setting.isDarkMode && !setting.isReadMode ? _dark : _light;
+    Color isReadModebackgroundColor = setting.isReadMode
+        ? Color.fromRGBO(244, 198, 156, 100)
+        : currentTheme.scaffoldBackgroundColor;
+
+    Color isDarkModebackgroundColor = setting.isDarkMode
+        ? Color.fromRGBO(22, 1, 60, 100)
+        : currentTheme.scaffoldBackgroundColor;
+    Color isReadModeColor = setting.isReadMode ? Colors.black : Colors.white;
+    Color cardColor = setting.isReadMode
+        ? isReadModebackgroundColor
+        : setting.isDarkMode
+            ? isDarkModebackgroundColor
+            : $primary500;
+
     return DropdownButton<String>(
       value: widget.dropdownValue,
-      dropdownColor: $primary500,
-      icon: const Icon(Icons.arrow_downward, color: $white),
+      dropdownColor: cardColor,
+      icon: Icon(Icons.arrow_downward, color: isReadModeColor),
       elevation: 16,
       onChanged: widget.dropDownCallBack,
-      style: TextStyle(color: $white),
+      style: TextStyle(color: isReadModeColor),
       items: list3.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(
             value,
             style: TextStyle(
-              color: Colors.white, // Set the desired text color
+              color: isReadModeColor, // Set the desired text color
             ),
           ),
         );
