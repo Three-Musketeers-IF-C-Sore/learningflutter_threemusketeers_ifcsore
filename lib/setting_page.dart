@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'change.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({Key? key});
@@ -28,16 +29,18 @@ class _MySettingState extends State<Setting> {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData currentTheme = isDarkMode && !isReadMode ? _dark : _light;
-    Color backgroundColor = isReadMode
+    final setting = Provider.of<SettingProvider>(context);
+    
+    ThemeData currentTheme = setting.isDarkMode && !setting.isReadMode ? _dark : _light;
+    Color backgroundColor = setting.isReadMode
         ? Colors.orange.shade100
         : currentTheme.scaffoldBackgroundColor;
 
-    if (isDarkMode && isReadMode) {
-      // Automatically turn off isDarkMode and isReadMode when isDarkMode is turned on
-      isDarkMode = false;
-      isReadMode = false;
-    }
+    // if (isDarkMode && isReadMode) {
+    //   // Automatically turn off isDarkMode and isReadMode when isDarkMode is turned on
+    //   isDarkMode = false;
+    //   isReadMode = false;
+    // }
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -76,53 +79,35 @@ class _MySettingState extends State<Setting> {
               const SizedBox(
                 height: 20,
               ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    isDarkMode = !isDarkMode;
-                    if (isDarkMode && isReadMode) {
-                      isReadMode = false;
-                    }
-                  });
-                },
-                child: Row(
+              Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     const Text('Dark Mode'),
                     Switch(
-                      value: isDarkMode,
+                      value: setting.isDarkMode,
                       onChanged: (value) {
                         setState(() {
-                          isDarkMode = value;
+                          setting.isDarkMode = value;
+                          if(setting.isReadMode) setting.isReadMode = false;
                         });
                       },
                     ),
                   ],
                 ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    isReadMode = !isReadMode;
-                    if (isReadMode && isDarkMode) {
-                      isDarkMode = false;
-                    }
-                  });
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    const Text('Read Mode'),
-                    Switch(
-                      value: isReadMode,
-                      onChanged: (value) {
-                        setState(() {
-                          isReadMode = value;
-                        });
-                      },
-                    ),
-                  ],
-                ),
+                Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text('Read Mode'),
+                  Switch(
+                    value: setting.isReadMode,
+                    onChanged: (value) {
+                      setState(() {
+                        setting.isReadMode = value;
+                        if(setting.isDarkMode) setting.isDarkMode = false;
+                      });
+                    },
+                  ),
+                ],
               ),
             ],
           ),

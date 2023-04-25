@@ -3,6 +3,7 @@ import 'package:learningflutter_threemusketeers_ifcsore/cart_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/mikroskil_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
 import './providers/menu_provider.dart';
 import './providers/cart_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => CartProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SettingProvider(),
         ),
       ],
       child: MaterialApp(

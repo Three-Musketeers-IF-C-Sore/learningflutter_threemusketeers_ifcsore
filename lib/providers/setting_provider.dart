@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 
 class SettingProvider extends ChangeNotifier {
-  var light = ThemeData(
-    brightness: Brightness.light,
-    primarySwatch: Colors.purple,
-  );
+  bool _isDarkMode = false;
+  bool _isReadMode = false;
 
-  var dark = ThemeData(
-    brightness: Brightness.dark,
-    primarySwatch: Colors.purple,
-  );
+  bool get isDarkMode => _isDarkMode;
+  bool get isReadMode => _isReadMode;
 
-  bool _enableDarkMode = false;
-  bool get enableDarkMode => _enableDarkMode;
+  set isDarkMode(bool value) {
+    _isDarkMode = value;
+    notifyListeners();
+  }
 
-  set setBrightness(val) {
-    _enableDarkMode = val;
+  set isReadMode(bool value) {
+    _isReadMode = value;
     notifyListeners();
   }
 }
