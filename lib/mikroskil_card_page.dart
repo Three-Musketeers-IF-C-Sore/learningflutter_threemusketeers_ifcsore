@@ -90,7 +90,7 @@ class _BoxState extends State<Box> {
             children: [
               Row(children: [
                 Expanded(
-                  flex: 6,
+                  flex: 5,
                   child: Text(
                     'Fakultas',
                     style: TextStyle(
@@ -100,7 +100,7 @@ class _BoxState extends State<Box> {
                   ),
                 ),
                 Expanded(
-                  flex: 6,
+                  flex: 7,
                   child: DropdownButton<String>(
                     dropdownColor: cardColor,
                     value: dropdownValueOne,
@@ -133,7 +133,7 @@ class _BoxState extends State<Box> {
               const Divider(),
               Row(children: [
                 Expanded(
-                  flex: 6,
+                  flex: 5,
                   child: Text(
                     'Jurusan',
                     style: TextStyle(
@@ -143,7 +143,7 @@ class _BoxState extends State<Box> {
                   ),
                 ),
                 Expanded(
-                  flex: 6,
+                  flex: 7,
                   child: dropdownValueOne == 'Informatika'
                       ? DropDownButtonTwo(
                           dropdownValue: dropdownValueTwo,
