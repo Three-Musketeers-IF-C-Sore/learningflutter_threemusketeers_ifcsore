@@ -70,7 +70,7 @@ class _MySettingState extends State<Setting> {
           backgroundColor: isDarkModeBackgroundColor,
         ),
         body: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[

@@ -47,9 +47,6 @@ class _DiscoverPageState extends State<DiscoverPage> {
   Widget build(BuildContext context) {
     final currentWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Discover"),
-      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
@@ -95,9 +92,12 @@ class _DiscoverPageState extends State<DiscoverPage> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
+                            Container(
+                              alignment: Alignment.centerLeft,
                               width: currentWidth*0.5,
-                              child: FittedBox(child: Text(recommend[index]["title"], style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),))
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(recommend[index]["title"], style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),))
                             ),
                             Text(recommend[index]["university"], style: const TextStyle(color: Colors.grey, fontSize: 15, fontWeight: FontWeight.w400),),
                             Text(recommend[index]["instructor"], style: const TextStyle(color: Colors.grey, fontSize: 15, fontWeight: FontWeight.w400),),

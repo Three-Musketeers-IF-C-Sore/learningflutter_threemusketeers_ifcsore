@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:indexed/indexed.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 import '../theme/colors.dart';
@@ -87,7 +85,7 @@ class _ProfileState extends State<Profile> {
                 Row(
                   children: [
                     SizedBox(
-                      width: screenWidth * 0.8,
+                      width: screenWidth * 0.75,
                       child: _isEditing
                           ? TextFormField(
                               textAlign: TextAlign.justify,

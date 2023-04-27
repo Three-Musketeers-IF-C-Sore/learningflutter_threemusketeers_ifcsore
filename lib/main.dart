@@ -120,13 +120,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(
-                text: "Week 6: Mikroskil [Fakultas:Informatika]",
+                text: "Week 6: Mikroskil Major Information",
                 handleOnPressed: () => {
                       navigate(context, const MikroskilPage()),
                     }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(
-                text: "Week 7: ",
+                text: "Week 7: Find Course Online",
                 handleOnPressed: () => {
                       navigate(context, const CourseApp()),
                     }),

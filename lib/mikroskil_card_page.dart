@@ -60,11 +60,11 @@ class _BoxState extends State<Box> {
     ThemeData currentTheme =
         setting.isDarkMode && !setting.isReadMode ? _dark : _light;
     Color isReadModebackgroundColor = setting.isReadMode
-        ? Color.fromRGBO(244, 198, 156, 100)
+        ? const Color.fromRGBO(244, 198, 156, 100)
         : currentTheme.scaffoldBackgroundColor;
 
     Color isDarkModebackgroundColor = setting.isDarkMode
-        ? Color.fromRGBO(22, 1, 60, 100)
+        ? const Color.fromRGBO(22, 1, 60, 100)
         : currentTheme.scaffoldBackgroundColor;
 
     Color isReadModeColor = setting.isReadMode ? Colors.black : Colors.white;
@@ -85,7 +85,7 @@ class _BoxState extends State<Box> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
               Row(children: [
@@ -174,7 +174,7 @@ class _BoxState extends State<Box> {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Padding(padding: EdgeInsets.all(10)),
+              const Padding(padding: EdgeInsets.all(10)),
               Row(
                 children: [
                   Expanded(
@@ -227,11 +227,11 @@ class _DropDownButtonTwoState extends State<DropDownButtonTwo> {
     ThemeData currentTheme =
         setting.isDarkMode && !setting.isReadMode ? _dark : _light;
     Color isReadModebackgroundColor = setting.isReadMode
-        ? Color.fromRGBO(244, 198, 156, 100)
+        ? const Color.fromRGBO(244, 198, 156, 100)
         : currentTheme.scaffoldBackgroundColor;
 
     Color isDarkModebackgroundColor = setting.isDarkMode
-        ? Color.fromRGBO(22, 1, 60, 100)
+        ? const Color.fromRGBO(22, 1, 60, 100)
         : currentTheme.scaffoldBackgroundColor;
     Color isReadModeColor = setting.isReadMode ? Colors.black : Colors.white;
     Color cardColor = setting.isReadMode
@@ -289,11 +289,11 @@ class _DropDownButtonThreeState extends State<DropDownButtonThree> {
     ThemeData currentTheme =
         setting.isDarkMode && !setting.isReadMode ? _dark : _light;
     Color isReadModebackgroundColor = setting.isReadMode
-        ? Color.fromRGBO(244, 198, 156, 100)
+        ? const Color.fromRGBO(244, 198, 156, 100)
         : currentTheme.scaffoldBackgroundColor;
 
     Color isDarkModebackgroundColor = setting.isDarkMode
-        ? Color.fromRGBO(22, 1, 60, 100)
+        ? const Color.fromRGBO(22, 1, 60, 100)
         : currentTheme.scaffoldBackgroundColor;
     Color isReadModeColor = setting.isReadMode ? Colors.black : Colors.white;
     Color cardColor = setting.isReadMode
