@@ -3,7 +3,9 @@ import 'package:learningflutter_threemusketeers_ifcsore/cart_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/mikroskil_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/form_email_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/widget/globals.dart';
 import './providers/menu_provider.dart';
 import './providers/cart_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
@@ -38,6 +40,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter',
+        navigatorKey: navigatorKey,
         theme: ThemeData(
           primarySwatch: Colors.blue,
           unselectedWidgetColor: Colors.white,
@@ -129,6 +132,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 text: "Week 7: Find Course Online",
                 handleOnPressed: () => {
                       navigate(context, const CourseApp()),
+                    }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 10: Create Email",
+                handleOnPressed: () => {
+                      navigate(context, const FormEmail()),
                     }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
