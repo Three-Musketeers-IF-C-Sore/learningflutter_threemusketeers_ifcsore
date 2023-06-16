@@ -4,6 +4,8 @@ import 'package:learningflutter_threemusketeers_ifcsore/mikroskil_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/form_email_page.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/w9.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/providers/mail_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/widget/globals.dart';
 import './providers/menu_provider.dart';
@@ -36,6 +38,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => SettingProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => MailProvider(),
         ),
       ],
       child: MaterialApp(
@@ -132,6 +137,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 text: "Week 7: Find Course Online",
                 handleOnPressed: () => {
                       navigate(context, const CourseApp()),
+                    }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 9: Email",
+                handleOnPressed: () => {
+                      navigate(context, const Email()),
                     }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(

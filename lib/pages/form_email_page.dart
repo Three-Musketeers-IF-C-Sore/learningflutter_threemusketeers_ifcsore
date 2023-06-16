@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/main.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/w9.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/providers/mail_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/widget/globals.dart';
+import 'package:provider/provider.dart';
 
 class FormEmail extends StatefulWidget {
   const FormEmail({super.key});
@@ -20,6 +23,8 @@ class _FormEmailState extends State<FormEmail> {
 
   @override
   Widget build(BuildContext context) {
+    final mail = Provider.of<MailProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Create Email"),
@@ -130,6 +135,13 @@ class _FormEmailState extends State<FormEmail> {
                     ),
                     TextButton(
                       onPressed: () {
+                        setState(() {
+                          mail.addMail(6, subject.text, recipient.text, body.text);
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                            content: Text("Added to cart successfully"),
+                            duration: Duration(milliseconds: 500),
+                          ));
+                        });
                         Navigator.pop(context);
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -137,7 +149,7 @@ class _FormEmailState extends State<FormEmail> {
                             action: SnackBarAction(
                               label: 'Ok', 
                               onPressed: () {
-                                Route route = MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Learning Flutter'));
+                                Route route = MaterialPageRoute(builder: (context) => const Email());
                                 navigatorKey.currentState?.push(route);
                               }
                             ),

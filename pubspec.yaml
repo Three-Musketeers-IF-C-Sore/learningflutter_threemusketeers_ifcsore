@@ -39,6 +39,7 @@ dependencies:
   provider: ^6.0.5
   intl: ^0.18.0
   math_expressions: ^2.0.0
+  circular_profile_avatar: ^2.0.5
 
 dev_dependencies:
   flutter_test:
