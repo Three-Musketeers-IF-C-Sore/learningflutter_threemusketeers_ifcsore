@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/widgets/main/appbar.dart';
 
 class MusicPage extends StatefulWidget {
   const MusicPage({super.key});
@@ -15,9 +16,8 @@ class _MusicPageState extends State<MusicPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Music"),
-        centerTitle: true,
+      appBar: const MainAppBar(
+        title: "Music",
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -30,8 +30,8 @@ class _MusicPageState extends State<MusicPage> {
                     "../assets/images/maroon.png",
                     width: 35,
                   ),
-                  title: Text('Memories'),
-                  subtitle: Text('Maroon 5'),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
                   trailing: IconButton(
                     icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
                     onPressed: () {
@@ -48,8 +48,8 @@ class _MusicPageState extends State<MusicPage> {
                     "../assets/images/maroon.png",
                     width: 35,
                   ),
-                  title: Text('Memories'),
-                  subtitle: Text('Maroon 5'),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
                   trailing: IconButton(
                     icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
                     onPressed: () {
@@ -66,8 +66,8 @@ class _MusicPageState extends State<MusicPage> {
                     "../assets/images/maroon.png",
                     width: 35,
                   ),
-                  title: Text('Memories'),
-                  subtitle: Text('Maroon 5'),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
                   trailing: IconButton(
                     icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
                     onPressed: () {
@@ -84,8 +84,98 @@ class _MusicPageState extends State<MusicPage> {
                     "../assets/images/maroon.png",
                     width: 35,
                   ),
-                  title: Text('Memories'),
-                  subtitle: Text('Maroon 5'),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
+                  trailing: IconButton(
+                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                    onPressed: () {
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Image.asset(
+                    "../assets/images/maroon.png",
+                    width: 35,
+                  ),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
+                  trailing: IconButton(
+                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                    onPressed: () {
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Image.asset(
+                    "../assets/images/maroon.png",
+                    width: 35,
+                  ),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
+                  trailing: IconButton(
+                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                    onPressed: () {
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Image.asset(
+                    "../assets/images/maroon.png",
+                    width: 35,
+                  ),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
+                  trailing: IconButton(
+                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                    onPressed: () {
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Image.asset(
+                    "../assets/images/maroon.png",
+                    width: 35,
+                  ),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
+                  trailing: IconButton(
+                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                    onPressed: () {
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Image.asset(
+                    "../assets/images/maroon.png",
+                    width: 35,
+                  ),
+                  title: const Text('Memories'),
+                  subtitle: const Text('Maroon 5'),
                   trailing: IconButton(
                     icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
                     onPressed: () {
