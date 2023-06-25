@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/cart_page.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/contact_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/mikroskil_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app.dart';
@@ -150,6 +151,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 handleOnPressed: () => {
                       navigate(context, const FormEmail()),
                     }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 11: Contact Page",
+                handleOnPressed: () => {
+                  navigate(context, const ContactPage()),
+                }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
             const Padding(padding: EdgeInsets.all(30)),
