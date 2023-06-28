@@ -5,6 +5,7 @@ import 'package:learningflutter_threemusketeers_ifcsore/mikroskil_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/form_email_page.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/music.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/w9.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/mail_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
@@ -157,6 +158,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 handleOnPressed: () => {
                   navigate(context, const ContactPage()),
                 }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 12: Music Lists",
+                handleOnPressed: () => {
+                      navigate(context, const MusicPage()),
+                    }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
             const Padding(padding: EdgeInsets.all(30)),
