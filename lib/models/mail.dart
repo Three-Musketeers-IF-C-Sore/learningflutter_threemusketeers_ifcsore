@@ -9,7 +9,7 @@ class Mail extends ChangeNotifier {
   bool? isFavorite;
 
   Mail({
-    required this.id, 
+    this.id, 
     required this.subject, 
     required this.recipient, 
     required this.body,

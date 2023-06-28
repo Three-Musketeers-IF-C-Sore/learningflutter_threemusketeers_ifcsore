@@ -1,8 +1,11 @@
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/form_email_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/mail_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:provider/provider.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/service/navigate.dart';
+
 
 class Email extends StatefulWidget {
   const Email({super.key});
@@ -21,9 +24,6 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       final mail = Provider.of<MailProvider>(context, listen: false);
-      // mail.items.forEach((key, value) {
-      //   value.isChecked = false;
-      // });
     });
   }
   @override
@@ -100,11 +100,15 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
+            DrawerHeader(
+              decoration: const BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Compose'),
+              child: ElevatedButton(
+                onPressed: () {
+                  navigate(context, const FormEmail());
+                },
+                child: const Text('Compose')),
             ),
             ListTile(
               leading: const Icon(
@@ -150,7 +154,6 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
                 },
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
-                // padding: const EdgeInsets.only(bottom: 3),
                 itemCount: mail.items.length,
                 itemBuilder:(context, index) {
                   return Container(
