@@ -11,7 +11,9 @@ class MusicPage extends StatefulWidget {
 }
 
 class _MusicPageState extends State<MusicPage> {
-  bool isPlaying = false;
+  bool isPlaying1 = false;
+  bool isPlaying2 = false;
+  bool isPlaying3 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +35,10 @@ class _MusicPageState extends State<MusicPage> {
                   title: const Text('Memories'),
                   subtitle: const Text('Maroon 5'),
                   trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                    icon: Icon(isPlaying1 ? Icons.pause : Icons.play_arrow),
                     onPressed: () {
                       setState(() {
-                        isPlaying = !isPlaying;
+                        isPlaying1 = !isPlaying1;
                       });
                     },
                   ),
@@ -51,10 +53,10 @@ class _MusicPageState extends State<MusicPage> {
                   title: const Text('Memories'),
                   subtitle: const Text('Maroon 5'),
                   trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                    icon: Icon(isPlaying2 ? Icons.pause : Icons.play_arrow),
                     onPressed: () {
                       setState(() {
-                        isPlaying = !isPlaying;
+                        isPlaying2 = !isPlaying2;
                       });
                     },
                   ),
@@ -69,118 +71,10 @@ class _MusicPageState extends State<MusicPage> {
                   title: const Text('Memories'),
                   subtitle: const Text('Maroon 5'),
                   trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                    icon: Icon(isPlaying3 ? Icons.pause : Icons.play_arrow),
                     onPressed: () {
                       setState(() {
-                        isPlaying = !isPlaying;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Image.asset(
-                    "../assets/images/maroon.png",
-                    width: 35,
-                  ),
-                  title: const Text('Memories'),
-                  subtitle: const Text('Maroon 5'),
-                  trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-                    onPressed: () {
-                      setState(() {
-                        isPlaying = !isPlaying;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Image.asset(
-                    "../assets/images/maroon.png",
-                    width: 35,
-                  ),
-                  title: const Text('Memories'),
-                  subtitle: const Text('Maroon 5'),
-                  trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-                    onPressed: () {
-                      setState(() {
-                        isPlaying = !isPlaying;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Image.asset(
-                    "../assets/images/maroon.png",
-                    width: 35,
-                  ),
-                  title: const Text('Memories'),
-                  subtitle: const Text('Maroon 5'),
-                  trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-                    onPressed: () {
-                      setState(() {
-                        isPlaying = !isPlaying;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Image.asset(
-                    "../assets/images/maroon.png",
-                    width: 35,
-                  ),
-                  title: const Text('Memories'),
-                  subtitle: const Text('Maroon 5'),
-                  trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-                    onPressed: () {
-                      setState(() {
-                        isPlaying = !isPlaying;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Image.asset(
-                    "../assets/images/maroon.png",
-                    width: 35,
-                  ),
-                  title: const Text('Memories'),
-                  subtitle: const Text('Maroon 5'),
-                  trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-                    onPressed: () {
-                      setState(() {
-                        isPlaying = !isPlaying;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Image.asset(
-                    "../assets/images/maroon.png",
-                    width: 35,
-                  ),
-                  title: const Text('Memories'),
-                  subtitle: const Text('Maroon 5'),
-                  trailing: IconButton(
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-                    onPressed: () {
-                      setState(() {
-                        isPlaying = !isPlaying;
+                        isPlaying3 = !isPlaying3;
                       });
                     },
                   ),
