@@ -44,39 +44,43 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
       appBar: AppBar(
         title: const Text("Email"),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            showModalBottomSheet(
-              context: context,
-              builder: (BuildContext bc){
-                return Wrap(
-                  children: <Widget>[
-                    ListTile(
-                      leading: const Icon(Icons.person),
-                      title: const Text('User123'),
-                      onTap: () => {}          
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.person),
-                      title: const Text('Bot924'),
-                      onTap: () => {},          
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.person),
-                      title: const Text('Ros019'),
-                      onTap: () => {},          
-                    ),
-                  ],
-                );
-              }
-            );
-          },
-          icon: CircularProfileAvatar(
-            "",
-            backgroundColor: const Color.fromRGBO(79, 55, 139, 1),
-            radius: 50,
+        actions: [
+          IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (BuildContext bc){
+                  return Wrap(
+                    children: <Widget>[
+                      ListTile(
+                        leading: const Icon(Icons.person),
+                        title: const Text('User123'),
+                        onTap: () => {}          
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.person),
+                        title: const Text('Bot924'),
+                        onTap: () => {},          
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.person),
+                        title: const Text('Ros019'),
+                        onTap: () => {},          
+                      ),
+                    ],
+                  );
+                }
+              );
+            },
+            icon: Container(
+              child: const ClipOval(
+                child: CircleAvatar(
+                  backgroundColor: Color.fromRGBO(79, 55, 139, 1),
+                ),
+              )
+            ),
           ),
-        ),
+        ],
         bottom: TabBar(
           controller: _controller,
           isScrollable: true,
@@ -96,7 +100,7 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
           ],
         ),
       ),
-      endDrawer: Drawer(
+      drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
