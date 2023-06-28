@@ -21,9 +21,9 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       final mail = Provider.of<MailProvider>(context, listen: false);
-      mail.items.forEach((key, value) {
-        // value.isChecked = false;
-      });
+      // mail.items.forEach((key, value) {
+      //   value.isChecked = false;
+      // });
     });
   }
   @override
@@ -161,14 +161,22 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
                       child: Row(
                         children: [
                           Checkbox(
-                            value: false,
-                            onChanged: (a) => {}
+                            value: mail.items.values.toList()[index].isChecked,
+                            onChanged: (value) {
+                              setState(() {
+                                mail.items.values.toList()[index].isChecked = value;
+                              });
+                            }
                           ),
                           IconButton(
-                            onPressed: () => {}, 
-                            icon: const Icon(Icons.star_outline),
+                            onPressed: () {
+                              setState(() {
+                                mail.items.values.toList()[index].isFavorite = !mail.items.values.toList()[index].isFavorite!;
+                              });
+                            }, 
+                            icon: mail.items.values.toList()[index].isFavorite! ? const Icon(Icons.star, color: Colors.white) : const Icon(Icons.star_outline, color: Colors.white),
                           ),
-                          Text(mail.items.values.toList()[index].subject!), 
+                          Text(mail.items.values.toList()[index].subject!, style: const TextStyle(color: Colors.white),), 
                           // Text(mailData.body!), 
                         ]
                       ),
