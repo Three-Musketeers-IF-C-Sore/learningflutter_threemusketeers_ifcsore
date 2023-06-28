@@ -1,8 +1,11 @@
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/form_email_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/mail_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
 import 'package:provider/provider.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/service/navigate.dart';
+
 
 class Email extends StatefulWidget {
   const Email({super.key});
@@ -21,9 +24,6 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       final mail = Provider.of<MailProvider>(context, listen: false);
-      mail.items.forEach((key, value) {
-        // value.isChecked = false;
-      });
     });
   }
   @override
@@ -44,39 +44,43 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
       appBar: AppBar(
         title: const Text("Email"),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            showModalBottomSheet(
-              context: context,
-              builder: (BuildContext bc){
-                return Wrap(
-                  children: <Widget>[
-                    ListTile(
-                      leading: const Icon(Icons.person),
-                      title: const Text('User123'),
-                      onTap: () => {}          
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.person),
-                      title: const Text('Bot924'),
-                      onTap: () => {},          
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.person),
-                      title: const Text('Ros019'),
-                      onTap: () => {},          
-                    ),
-                  ],
-                );
-              }
-            );
-          },
-          icon: CircularProfileAvatar(
-            "",
-            backgroundColor: const Color.fromRGBO(79, 55, 139, 1),
-            radius: 50,
+        actions: [
+          IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (BuildContext bc){
+                  return Wrap(
+                    children: <Widget>[
+                      ListTile(
+                        leading: const Icon(Icons.person),
+                        title: const Text('User123'),
+                        onTap: () => {}          
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.person),
+                        title: const Text('Bot924'),
+                        onTap: () => {},          
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.person),
+                        title: const Text('Ros019'),
+                        onTap: () => {},          
+                      ),
+                    ],
+                  );
+                }
+              );
+            },
+            icon: Container(
+              child: const ClipOval(
+                child: CircleAvatar(
+                  backgroundColor: Color.fromRGBO(79, 55, 139, 1),
+                ),
+              )
+            ),
           ),
-        ),
+        ],
         bottom: TabBar(
           controller: _controller,
           isScrollable: true,
@@ -96,15 +100,19 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
           ],
         ),
       ),
-      endDrawer: Drawer(
+      drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
+            DrawerHeader(
+              decoration: const BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Compose'),
+              child: ElevatedButton(
+                onPressed: () {
+                  navigate(context, const FormEmail());
+                },
+                child: const Text('Compose')),
             ),
             ListTile(
               leading: const Icon(
@@ -150,7 +158,6 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
                 },
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
-                // padding: const EdgeInsets.only(bottom: 3),
                 itemCount: mail.items.length,
                 itemBuilder:(context, index) {
                   return Container(
@@ -161,14 +168,22 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
                       child: Row(
                         children: [
                           Checkbox(
-                            value: false,
-                            onChanged: (a) => {}
+                            value: mail.items.values.toList()[index].isChecked,
+                            onChanged: (value) {
+                              setState(() {
+                                mail.items.values.toList()[index].isChecked = value;
+                              });
+                            }
                           ),
                           IconButton(
-                            onPressed: () => {}, 
-                            icon: const Icon(Icons.star_outline),
+                            onPressed: () {
+                              setState(() {
+                                mail.items.values.toList()[index].isFavorite = !mail.items.values.toList()[index].isFavorite!;
+                              });
+                            }, 
+                            icon: mail.items.values.toList()[index].isFavorite! ? const Icon(Icons.star, color: Colors.white) : const Icon(Icons.star_outline, color: Colors.white),
                           ),
-                          Text(mail.items.values.toList()[index].subject!), 
+                          Text(mail.items.values.toList()[index].subject!, style: const TextStyle(color: Colors.white),), 
                           // Text(mailData.body!), 
                         ]
                       ),

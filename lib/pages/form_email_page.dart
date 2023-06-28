@@ -136,11 +136,7 @@ class _FormEmailState extends State<FormEmail> {
                     TextButton(
                       onPressed: () {
                         setState(() {
-                          mail.addMail(6, subject.text, recipient.text, body.text);
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                            content: Text("Added to cart successfully"),
-                            duration: Duration(milliseconds: 500),
-                          ));
+                          mail.addMail(0, subject.text, recipient.text, body.text, false, false);
                         });
                         Navigator.pop(context);
                         ScaffoldMessenger.of(context).showSnackBar(
