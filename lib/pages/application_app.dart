@@ -34,7 +34,10 @@ class _ApplicationAppState extends State<ApplicationApp> {
             children: [
               ListTile(
                 title: const Text('WhatsApp'),
-                leading: Tooltip(child: Image.asset('assets/images/whatsapp.png'), message: "WhatsApp",),
+                leading: Tooltip(
+                  message: "WhatsApp",
+                  child: Image.asset('assets/images/whatsapp.png'), 
+                ),
                 subtitle: Row(children: const [
                   Icon(Icons.star),
                   Text('4.2'),
