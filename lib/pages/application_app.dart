@@ -11,9 +11,8 @@ class ApplicationApp extends StatefulWidget {
 
 class _ApplicationAppState extends State<ApplicationApp> {
   double _value = 0;
-  double _min = 0;
-  double _max = 100;
-  // bool _isTimerRunning = false;
+  final double _min = 0;
+  final double _max = 100;
   bool _isDownload = true;
   bool _isUninstall = false;
   bool _isLoading = false;
@@ -68,8 +67,8 @@ class _ApplicationAppState extends State<ApplicationApp> {
               if (_isLoading) ... [
                 Slider(
                   value: _value, 
-                  min: 0,
-                  max: 100,
+                  min: _min,
+                  max: _max,
                   onChanged: null
                 )
               ]
