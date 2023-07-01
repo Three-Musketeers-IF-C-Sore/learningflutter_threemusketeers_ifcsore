@@ -77,6 +77,7 @@ flutter:
     - assets/images/undraw_Empty.png
     - assets/images/mikroskil.jpeg
     - assets/images/maroon.png
+    - assets/images/whatsapp.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
