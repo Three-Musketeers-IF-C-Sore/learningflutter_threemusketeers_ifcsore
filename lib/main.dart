@@ -10,6 +10,7 @@ import 'package:learningflutter_threemusketeers_ifcsore/pages/music.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/w9.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/mail_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/setting_provider.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/schedule.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/widget/globals.dart';
 import './providers/menu_provider.dart';
 import './providers/cart_provider.dart';
@@ -170,6 +171,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 text: "Week 13: Application Store",
                 handleOnPressed: () => {
                   navigate(context, const ApplicationApp()),
+                }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 14: Schedule",
+                handleOnPressed: () => {
+                  navigate(context, Schedule()),
                 }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
