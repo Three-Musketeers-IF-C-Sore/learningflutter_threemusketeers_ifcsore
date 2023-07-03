@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/DateTimePicker.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/cart_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/contact_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/mikroskil_page.dart';
@@ -163,6 +164,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 text: "Week 12: Music Lists",
                 handleOnPressed: () => {
                       navigate(context, const MusicPage()),
+                    }),
+                    const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 14: Date Time Picker",
+                handleOnPressed: () => {
+                      navigate(context, DateTimePicker()),
                     }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
