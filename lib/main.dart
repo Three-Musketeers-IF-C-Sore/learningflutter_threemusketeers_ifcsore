@@ -6,6 +6,8 @@ import 'package:learningflutter_threemusketeers_ifcsore/order_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/application_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/course_app.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/form_email_page.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/image_picker/provider.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/pages/image_picker/screen.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/music.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/w9.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/mail_provider.dart';
@@ -45,6 +47,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => MailProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ImagePickerProvider(),
         ),
       ],
       child: MaterialApp(
@@ -177,6 +182,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 text: "Week 14: Schedule",
                 handleOnPressed: () => {
                   navigate(context, Schedule()),
+                }),
+            const Padding(padding: EdgeInsets.all(8)),
+            HomeButton(
+                text: "Week 15: Banner",
+                handleOnPressed: () => {
+                  navigate(context, const ImagePickerScreen()),
                 }),
             const Padding(padding: EdgeInsets.all(8)),
             HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
