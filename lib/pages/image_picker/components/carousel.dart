@@ -87,7 +87,7 @@ class CarouselSliderWidget extends StatelessWidget {
                       onTap: () => Navigator.push(
                         context, 
                         MaterialPageRoute(
-                          builder: (context) => WebViewWidget(url: 'https://mikroskil.ac.id/pengumuman/354$i'),
+                          builder: (context) => const WebViewWidget(url: 'https://mikroskil.ac.id/pengumuman/3540'),
                         ),
                       ),
                       child: Container(
