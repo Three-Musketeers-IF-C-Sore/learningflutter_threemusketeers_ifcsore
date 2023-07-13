@@ -12,17 +12,17 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
-  late TabController _controller;
+  // late TabController _controller;
 
   @override
   void initState() {
     super.initState();
   }
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _controller.dispose();
+  //   super.dispose();
+  // }
 
   List errorMessage = [];
 

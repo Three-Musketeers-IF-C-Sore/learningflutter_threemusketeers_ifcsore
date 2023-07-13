@@ -86,7 +86,7 @@ class _ApplicationAppState extends State<ApplicationApp> {
     _timer = Timer.periodic(const Duration(seconds: 1), (Timer timer) {
       setState(() {
         _value += 20;
-        if (_value >= _max) {
+        if (_value >= _max && _isLoading) {
           _value = _max;
           _timer.cancel();
           _isLoading = false;

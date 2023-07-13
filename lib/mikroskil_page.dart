@@ -57,7 +57,7 @@ class _MikroskilPageState extends State<MikroskilPage> {
                 Icons.arrow_back_ios_new,
                 color: Colors.white,
               ),
-              onPressed: () => {navigate(context, const MyApp())},
+              onPressed: () => {navigate(context, const MyHomePage(title: 'Learning Flutter',))},
             ),
             centerTitle: true,
             title: const Text(

@@ -29,7 +29,7 @@ class _MusicPageState extends State<MusicPage> {
               Card(
                 child: ListTile(
                   leading: Image.asset(
-                    "../assets/images/maroon.png",
+                    "assets/images/maroon.png",
                     width: 35,
                   ),
                   title: const Text('Memories'),
@@ -47,7 +47,7 @@ class _MusicPageState extends State<MusicPage> {
               Card(
                 child: ListTile(
                   leading: Image.asset(
-                    "../assets/images/maroon.png",
+                    "assets/images/maroon.png",
                     width: 35,
                   ),
                   title: const Text('Memories'),
@@ -65,7 +65,7 @@ class _MusicPageState extends State<MusicPage> {
               Card(
                 child: ListTile(
                   leading: Image.asset(
-                    "../assets/images/maroon.png",
+                    "assets/images/maroon.png",
                     width: 35,
                   ),
                   title: const Text('Memories'),
