@@ -189,6 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 handleOnPressed: () => {
                   navigate(context, const ImagePickerScreen()),
                 }),    
+            const Padding(padding: EdgeInsets.all(24)),
           ],
         ),
       ))),
