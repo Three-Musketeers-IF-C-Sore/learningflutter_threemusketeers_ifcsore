@@ -188,12 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 text: "Week 15: Banner",
                 handleOnPressed: () => {
                   navigate(context, const ImagePickerScreen()),
-                }),
-            const Padding(padding: EdgeInsets.all(8)),
-            HomeButton(text: "Bonus: ", handleOnPressed: () => {}),
-            const Padding(padding: EdgeInsets.all(30)),
-            HomeButton(
-                isOutlined: true, text: "About Us", handleOnPressed: () => {}),
+                }),    
           ],
         ),
       ))),

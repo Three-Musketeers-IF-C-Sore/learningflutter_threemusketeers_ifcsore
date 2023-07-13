@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:learningflutter_threemusketeers_ifcsore/pages/image_picker/components/webview.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/image_picker/provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/typography.dart';
 import 'package:provider/provider.dart';
@@ -32,12 +31,7 @@ class CarouselSliderWidget extends StatelessWidget {
                 return Builder(
                   builder: (BuildContext context) {
                     return GestureDetector(
-                      onTap: () => Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) => WebViewWidget(url: 'https://mikroskil.ac.id/pengumuman/354$i'),
-                        ),
-                      ),
+                      onTap: () {},
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         margin: const EdgeInsets.symmetric(horizontal: 5.0),
@@ -84,12 +78,7 @@ class CarouselSliderWidget extends StatelessWidget {
                 return Builder(
                   builder: (BuildContext context) {
                     return GestureDetector(
-                      onTap: () => Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) => const WebViewWidget(url: 'https://mikroskil.ac.id/pengumuman/3540'),
-                        ),
-                      ),
+                      onTap: () {},
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         margin: const EdgeInsets.symmetric(horizontal: 5.0),
