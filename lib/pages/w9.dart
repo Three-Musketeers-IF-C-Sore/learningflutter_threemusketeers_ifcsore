@@ -1,5 +1,6 @@
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:learningflutter_threemusketeers_ifcsore/main.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/pages/form_email_page.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/providers/mail_provider.dart';
 import 'package:learningflutter_threemusketeers_ifcsore/theme/colors.dart';
@@ -141,6 +142,13 @@ class _EmailState extends State<Email> with TickerProviderStateMixin, ChangeNoti
                 Navigator.pop(context);
               },
             ),
+            ListTile(
+              leading: const Icon(
+                Icons.arrow_back,
+              ),
+              title: const Text('Back'),
+              onTap: () => {navigate(context, const MyHomePage(title: 'Learning Flutter',))},
+            )
           ],
         ),
       ),
