@@ -97,6 +97,7 @@ class _ScheduleState extends State<Schedule> {
     _width = MediaQuery.of(context).size.width;
     dateTime = DateFormat.yMd().format(DateTime.now());
     return Scaffold(
+      resizeToAvoidBottomInset: false, 
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Schedule'),
